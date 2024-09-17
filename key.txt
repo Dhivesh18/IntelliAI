@@ -1,0 +1,2 @@
+
+openai.api_key = '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'  # Replace with your actual OpenAI API key
