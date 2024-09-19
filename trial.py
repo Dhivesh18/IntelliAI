@@ -233,7 +233,7 @@ def send_email():
             server.starttls()
             server.login(smtp_username, smtp_password)
             server.send_message(msg)
-
+##
         return jsonify({'status': 'success', 'message': 'Approval email sent successfully.'})
     
     except Exception as e:
