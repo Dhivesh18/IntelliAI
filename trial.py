@@ -5,6 +5,14 @@ import smtplib
 from email.mime.text import MIMEText
 import uuid
 import openai
+import json
+
+# Load the JSON configuration
+file_path = '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/key.json'
+with open(file_path) as f:
+    config = json.load(f)
+
+api_key = config['API_KEY']
 
 app = Flask(__name__)
 
@@ -64,9 +72,6 @@ def send_approval_email():
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
 
-# OpenAI API key
-openai.api_key = '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'
-
 gop_data = [
     {
         "DPS": [
@@ -116,7 +121,7 @@ def extract_and_match():
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": f"Bearer {openai.api_key}"
+        "Authorization": f"Bearer {api_key}"
     }
 
     payload = {
