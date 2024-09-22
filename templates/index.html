@@ -163,12 +163,68 @@
             addMessage('bot', 'How can I assist you today?');
         }
 
+        // function sendMessage() {
+        //     const textInput = document.getElementById('text-input');
+        //     const fileInput = document.getElementById('file-input');
+        //     const file = fileInput.files[0];
+        //     const textMessage = textInput.value;
+            
+        //     if (textMessage.trim() === "" && !file) {
+        //         return;
+        //     }
+            
+        //     if (textMessage.trim() !== "") {
+        //         addMessage('user', textMessage);
+        //         fetch('/text_to_role', {
+        //             method: 'POST',
+        //             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        //             body: new URLSearchParams({ 'textMessage': textMessage })
+        //         })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             addMessage('bot', data.response_message);
+        //             if (data.response_message.includes("No matching role found")) {
+        //                 addMessage('bot', 'No matching role found. Please check with Eliot support.');
+        //             } else if (data.response_message.includes("Matching Role:")) {
+        //                 currentConfirmationMessage = data.response_message;
+        //                 role = extractRoleFromMessage(data.response_message);
+        //                 document.getElementById('query-section').classList.remove('active');
+        //                 document.getElementById('confirmation-section').classList.add('active');
+        //                 addMessage('bot', 'Please type "yes" to confirm or "no" to cancel.');
+        //             }
+        //         });
+        //         textInput.value = '';
+        //     }
+            
+        //     if (file) {
+        //         const formData = new FormData();
+        //         formData.append('image', file);
+
+        //         fetch('/image_to_text', {
+        //             method: 'POST',
+        //             body: formData
+        //         })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             addMessage('bot', data.response_message);
+        //             if (data.response_message.includes("No matching role found")) {
+        //                 addMessage('bot', 'No matching role found. Please check with Eliot support.');
+        //             } else if (data.response_message.includes("Matching Role:")) {
+        //                 currentConfirmationMessage = data.response_message;
+        //                 role = extractRoleFromMessage(data.response_message);
+        //                 document.getElementById('query-section').classList.remove('active');
+        //                 document.getElementById('confirmation-section').classList.add('active');
+        //                 addMessage('bot', 'Please type "yes" to confirm or "no" to cancel.');
+        //             }
+        //         });
+        //     }
+        // }
         function sendMessage() {
             const textInput = document.getElementById('text-input');
             const fileInput = document.getElementById('file-input');
             const file = fileInput.files[0];
             const textMessage = textInput.value;
-            
+
             if (textMessage.trim() === "" && !file) {
                 return;
             }
@@ -184,7 +240,7 @@
                 .then(data => {
                     addMessage('bot', data.response_message);
                     if (data.response_message.includes("No matching role found")) {
-                        addMessage('bot', 'No matching role found. Please check with Eliot support.');
+                        addMessage('bot', 'Please check with Eliot support.');
                     } else if (data.response_message.includes("Matching Role:")) {
                         currentConfirmationMessage = data.response_message;
                         role = extractRoleFromMessage(data.response_message);
@@ -197,6 +253,7 @@
             }
             
             if (file) {
+                addMessage('user', 'You attached an image.');
                 const formData = new FormData();
                 formData.append('image', file);
 
@@ -208,7 +265,7 @@
                 .then(data => {
                     addMessage('bot', data.response_message);
                     if (data.response_message.includes("No matching role found")) {
-                        addMessage('bot', 'No matching role found. Please check with Eliot support.');
+                        addMessage('bot', 'Please check with Eliot support.');
                     } else if (data.response_message.includes("Matching Role:")) {
                         currentConfirmationMessage = data.response_message;
                         role = extractRoleFromMessage(data.response_message);
@@ -217,6 +274,9 @@
                         addMessage('bot', 'Please type "yes" to confirm or "no" to cancel.');
                     }
                 });
+
+                // Reset the file input after processing
+                fileInput.value = ''; 
             }
         }
 
