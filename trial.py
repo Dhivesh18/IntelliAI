@@ -65,8 +65,7 @@ def send_approval_email():
         return jsonify({'status': 'error', 'message': str(e)})
 
 # OpenAI API key
-openai.api_key = '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' 
-
+openai.api_key = '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'
 
 gop_data = [
     {
@@ -189,55 +188,6 @@ def text_to_role():
         "extracted_message": text_message,
         "response_message": response_message
     })
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-
-
-       
-from flask import Flask, request, jsonify
-import smtplib
-from email.mime.text import MIMEText
-
-app = Flask(__name__)
-
-@app.route('/send_email', methods=['POST'])
-def send_email():
-    role = request.form['role']
-    user_email = request.form['userEmail']
-    manager_email = request.form['managerEmail']
-    confirmation_message = request.form['confirmationMessage']
-    
-    try:
-        # Configure your SMTP server details here
-        smtp_server = 'smtp.example.com'
-        smtp_port = 587
-        smtp_username = 'your_username'
-        smtp_password = 'your_password'
-
-        # Compose the email
-        subject = 'Approval Request'
-        body = f"""
-        Role: {role}
-        User Email: {user_email}
-        Confirmation Message: {confirmation_message}
-        """
-        msg = MIMEText(body)
-        msg['Subject'] = subject
-        msg['From'] = smtp_username
-        msg['To'] = manager_email
-
-        # Send the email
-        with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
-            server.login(smtp_username, smtp_password)
-            server.send_message(msg)
-##
-        return jsonify({'status': 'success', 'message': 'Approval email sent successfully.'})
-    
-    except Exception as e:
-        return jsonify({'status': 'error', 'message': str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True)
