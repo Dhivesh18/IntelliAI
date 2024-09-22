@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 import uuid
 import openai
 import json
-
+##
 # Load the JSON configuration
 file_path = '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/key.json'
 with open(file_path) as f:
