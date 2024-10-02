@@ -163,62 +163,6 @@
             addMessage('bot', 'How can I assist you today?');
         }
 
-        // function sendMessage() {
-        //     const textInput = document.getElementById('text-input');
-        //     const fileInput = document.getElementById('file-input');
-        //     const file = fileInput.files[0];
-        //     const textMessage = textInput.value;
-            
-        //     if (textMessage.trim() === "" && !file) {
-        //         return;
-        //     }
-            
-        //     if (textMessage.trim() !== "") {
-        //         addMessage('user', textMessage);
-        //         fetch('/text_to_role', {
-        //             method: 'POST',
-        //             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        //             body: new URLSearchParams({ 'textMessage': textMessage })
-        //         })
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             addMessage('bot', data.response_message);
-        //             if (data.response_message.includes("No matching role found")) {
-        //                 addMessage('bot', 'No matching role found. Please check with Eliot support.');
-        //             } else if (data.response_message.includes("Matching Role:")) {
-        //                 currentConfirmationMessage = data.response_message;
-        //                 role = extractRoleFromMessage(data.response_message);
-        //                 document.getElementById('query-section').classList.remove('active');
-        //                 document.getElementById('confirmation-section').classList.add('active');
-        //                 addMessage('bot', 'Please type "yes" to confirm or "no" to cancel.');
-        //             }
-        //         });
-        //         textInput.value = '';
-        //     }
-            
-        //     if (file) {
-        //         const formData = new FormData();
-        //         formData.append('image', file);
-
-        //         fetch('/image_to_text', {
-        //             method: 'POST',
-        //             body: formData
-        //         })
-        //         .then(response => response.json())
-        //         .then(data => {
-        //             addMessage('bot', data.response_message);
-        //             if (data.response_message.includes("No matching role found")) {
-        //                 addMessage('bot', 'No matching role found. Please check with Eliot support.');
-        //             } else if (data.response_message.includes("Matching Role:")) {
-        //                 currentConfirmationMessage = data.response_message;
-        //                 role = extractRoleFromMessage(data.response_message);
-        //                 document.getElementById('query-section').classList.remove('active');
-        //                 document.getElementById('confirmation-section').classList.add('active');
-        //                 addMessage('bot', 'Please type "yes" to confirm or "no" to cancel.');
-        //             }
-        //         });
-        //     }
-        // }
         function sendMessage() {
             const textInput = document.getElementById('text-input');
             const fileInput = document.getElementById('file-input');
@@ -239,9 +183,9 @@
                 .then(response => response.json())
                 .then(data => {
                     addMessage('bot', data.response_message);
-                    if (data.response_message.includes("No matching role found")) {
+                    if (data.response_message.includes("No matching role found") || data.response_message.includes("No Portfolio found") || data.response_message.includes("Portfolio not active")|| data.response_message.includes("No matching gop found")) {
                         addMessage('bot', 'Please check with Eliot support.');
-                    } else if (data.response_message.includes("Matching Role:")) {
+                    } else if (data.response_message.includes("Matching Role:")|| data.response_message.includes("Matching Portfolio GOP:")|| data.response_message.includes("Matching GOP:")) {
                         currentConfirmationMessage = data.response_message;
                         role = extractRoleFromMessage(data.response_message);
                         document.getElementById('query-section').classList.remove('active');
@@ -264,9 +208,9 @@
                 .then(response => response.json())
                 .then(data => {
                     addMessage('bot', data.response_message);
-                    if (data.response_message.includes("No matching role found")) {
+                    if (data.response_message.includes("No matching role found") || data.response_message.includes("No Portfolio found") || data.response_message.includes("Portfolio not active") || data.response_message.includes("No matching gop found")) {
                         addMessage('bot', 'Please check with Eliot support.');
-                    } else if (data.response_message.includes("Matching Role:")) {
+                    } else if (data.response_message.includes("Matching Role:")|| data.response_message.includes("Matching Portfolio GOP:")|| data.response_message.includes("Matching GOP:")){
                         currentConfirmationMessage = data.response_message;
                         role = extractRoleFromMessage(data.response_message);
                         document.getElementById('query-section').classList.remove('active');
@@ -285,24 +229,6 @@
             return match ? match[1] : '';
         }
 
-        // function confirmAction() {
-        //     const confirmationInput = document.getElementById('confirmation-input').value.trim().toLowerCase();
-
-        //     if (confirmationInput === 'yes') {
-        //         addMessage('user', 'Yes');
-        //         document.getElementById('confirmation-section').classList.remove('active');
-        //         document.getElementById('manager-email-section').classList.add('active');
-        //         addMessage('bot', 'Chatbot: Please enter your manager\'s email id:');
-        //     } else if (confirmationInput === 'no') {
-        //         addMessage('user', 'No');
-        //         addMessage('bot', 'Action canceled.');
-                
-        //         // Reactivate the query section for more requests
-        //         resetQueryForNextInteraction();
-        //     } else {
-        //         addMessage('bot', 'Invalid response. Please type "yes" to confirm or "no" to cancel.');
-        //     }
-        // }
         function confirmAction() {
     const confirmationInput = document.getElementById('confirmation-input').value.trim().toLowerCase();
 
@@ -372,4 +298,3 @@
     </script>
 </body>
 </html>
-<!--  -->

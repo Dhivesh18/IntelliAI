@@ -30,11 +30,25 @@ def match_role(user_query, roles_data):
                 return role['Role'], role['Description']
     return "No matching role found.", "No description available"
 
+def find_gop_using_ptf(user_query, gop_data):
+    found_gop=None
+    for gop_dict in gop_data:
+        for gop_name, portfolios in gop_dict.items():
+            for portfolio_info in portfolios:
+                if portfolio_info["Portfolio"] in user_query:
+                    # found_gop = {"GOP": gop_name, "Portfolio": portfolio_info}
+                    found_gop = gop_name if portfolio_info["Status"] is "Active" else f"{portfolio_info["Portfolio"]} - Portfolio not active"
+                    break
+    return found_gop if found_gop is not None else "No Portfolio found."
+
 def match_gop(user_query, gop_data):
     for gop in user_query.split():
         if gop in gop_data[0].keys():
             return gop
     return "No matching gop found."
+
+def counterpart(user_query, counterpart_data):
+    return
 
 def generate_request_id():
     return str(uuid.uuid4())
@@ -82,6 +96,9 @@ gop_data = [
         ],
         "XYZ": [
             {"Portfolio": "XYZ_ABC", "Status": "Active"}
+        ],
+        "FX" : [
+            {"Portfolio": "FX-GY-NOMGT", "Status": "Active"}
         ]
     }
 ]
@@ -98,6 +115,7 @@ roles_data = [
     {"Role": "MAJ_FLOW_WHT", "Description": "Input of WHT Flows", "Keywords": "WHT, WHT flows, no access to WHT flows, unable to input WHT data"}
 ]
 
+counterpart_data = []
 
 @app.route('/')
 def index():
@@ -166,6 +184,12 @@ def extract_and_match():
     if 'Habilitation' in user_query:
         matching_role, description = match_role(user_query, roles_data)
         response_message = f"Matching Role: {matching_role}\nDescription: {description}"
+    elif 'Portfolio' in user_query:
+        matching_role = find_gop_using_ptf(user_query, gop_data)
+        response_message = f"Matching Portfolio GOP: {matching_role}"
+    elif 'Counterpart' in user_query.lower():
+        matching_role = counterpart(user_query, counterpart_data)
+        response_message = f"Eliot Code is: {matching_role}"
     else:
         matching_role = match_gop(user_query, gop_data)
         response_message = f"Matching GOP: {matching_role}"
@@ -185,6 +209,12 @@ def text_to_role():
     if 'Habilitation' in text_message:
         matching_role, description = match_role(text_message, roles_data)
         response_message = f"Matching Role: {matching_role}\nDescription: {description}"
+    elif 'Portfolio' in text_message.lower():
+        matching_role = find_gop_using_ptf(text_message, gop_data)
+        response_message = f"Matching Portfolio GOP: {matching_role}"
+    elif 'Counterpart' in text_message.lower():
+        matching_role = counterpart(text_message, counterpart_data)
+        response_message = f"Eliot Code is: {matching_role}"
     else:
         matching_role = match_gop(text_message, gop_data)
         response_message = f"Matching GOP: {matching_role}"
