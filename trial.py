@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 import uuid
 import openai
 import json
-##
+
 # Load the JSON configuration
 file_path = '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/key.json'
 with open(file_path) as f:
@@ -15,6 +15,37 @@ with open(file_path) as f:
 api_key = config['API_KEY']
 
 app = Flask(__name__)
+
+gop_data = [
+    {
+        "DPS": [
+            {"Portfolio": "PDS_ABC", "Status": "Active"},
+            {"Portfolio": "PDS_XYZ", "Status": "Active"},
+            {"Portfolio": "PDS_DEF", "Status": "Active"},
+            {"Portfolio": "PDS_DEY", "Status": "Not Active"}
+        ],
+        "XYZ": [
+            {"Portfolio": "XYZ_ABC", "Status": "Active"}
+        ],
+        "FX" : [
+            {"Portfolio": "FX-GY-NOMGT", "Status": "Active"}
+        ]
+    }
+]
+
+roles_data = [
+    {"Role": "DELETE_FLUX_X", "Description": "Delete flows via excel", "Keywords": "delete, flows, excel, not allowed to delete flows, no permission for deleting flows"},
+    {"Role": "DELETE_OLD_DEAL_X", "Description": "Massive delete old deal x", "Keywords": "delete, old deals, massive delete, no permission for deleting deals, delete deal, not allowed to delete deals"},
+    {"Role": "MAJ_FLOW_CVA", "Description": "Input of CVA Flows", "Keywords": "CVA, CVA flows, no access for CVA flows, unable to input CVA data"},
+    {"Role": "MAJ_FLOW_OPERATIONEL", "Description": "Input of AJT, CLR, MTM Flows", "Keywords": "AJT flows, CLR flows, MTM flows, no permission for AJT, no access for CLR, unable to input MTM data, AJT, CLR, MTM"},
+    {"Role": "MAJ_FLOW_TRESORESULT", "Description": "Input of FOR, RES, SAF, FIN, EMB, EMD Flows", "Keywords": "treasury result flows, FOR, RES, SAF, FIN, EMB, EMD, no permission for treasury flows, not allowed to input FOR data"},
+    {"Role": "MAJ_FLOW_TSF_SHB", "Description": "Input of TSF/SHB Flows", "Keywords": "TSF, TSF flows, SHB flows, no access to TSF/SHB, unable to input TSF/SHB data"},
+    {"Role": "RESULTAT_VALO", "Description": "Input of RHE, REM Flows", "Keywords": "RHE, RHE flows, REM flows, not allowed to input RHE/REM flows, no access for RHE/REM flows"},
+    {"Role": "MAJ_FLOW_FLX", "Description": "Input of FLX Flows", "Keywords": "FLX, FLX flows, no permission for FLX flows, not allowed to input FLX data"},
+    {"Role": "MAJ_FLOW_WHT", "Description": "Input of WHT Flows", "Keywords": "WHT, WHT flows, no access to WHT flows, unable to input WHT data"}
+]
+
+counterpart_data = []
 
 # Function to encode the image
 def encode_image(image_path):
@@ -85,37 +116,6 @@ def send_approval_email():
     
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
-
-gop_data = [
-    {
-        "DPS": [
-            {"Portfolio": "PDS_ABC", "Status": "Active"},
-            {"Portfolio": "PDS_XYZ", "Status": "Active"},
-            {"Portfolio": "PDS_DEF", "Status": "Active"},
-            {"Portfolio": "PDS_DEY", "Status": "Not Active"}
-        ],
-        "XYZ": [
-            {"Portfolio": "XYZ_ABC", "Status": "Active"}
-        ],
-        "FX" : [
-            {"Portfolio": "FX-GY-NOMGT", "Status": "Active"}
-        ]
-    }
-]
-
-roles_data = [
-    {"Role": "DELETE_FLUX_X", "Description": "Delete flows via excel", "Keywords": "delete, flows, excel, not allowed to delete flows, no permission for deleting flows"},
-    {"Role": "DELETE_OLD_DEAL_X", "Description": "Massive delete old deal x", "Keywords": "delete, old deals, massive delete, no permission for deleting deals, delete deal, not allowed to delete deals"},
-    {"Role": "MAJ_FLOW_CVA", "Description": "Input of CVA Flows", "Keywords": "CVA, CVA flows, no access for CVA flows, unable to input CVA data"},
-    {"Role": "MAJ_FLOW_OPERATIONEL", "Description": "Input of AJT, CLR, MTM Flows", "Keywords": "AJT flows, CLR flows, MTM flows, no permission for AJT, no access for CLR, unable to input MTM data, AJT, CLR, MTM"},
-    {"Role": "MAJ_FLOW_TRESORESULT", "Description": "Input of FOR, RES, SAF, FIN, EMB, EMD Flows", "Keywords": "treasury result flows, FOR, RES, SAF, FIN, EMB, EMD, no permission for treasury flows, not allowed to input FOR data"},
-    {"Role": "MAJ_FLOW_TSF_SHB", "Description": "Input of TSF/SHB Flows", "Keywords": "TSF, TSF flows, SHB flows, no access to TSF/SHB, unable to input TSF/SHB data"},
-    {"Role": "RESULTAT_VALO", "Description": "Input of RHE, REM Flows", "Keywords": "RHE, RHE flows, REM flows, not allowed to input RHE/REM flows, no access for RHE/REM flows"},
-    {"Role": "MAJ_FLOW_FLX", "Description": "Input of FLX Flows", "Keywords": "FLX, FLX flows, no permission for FLX flows, not allowed to input FLX data"},
-    {"Role": "MAJ_FLOW_WHT", "Description": "Input of WHT Flows", "Keywords": "WHT, WHT flows, no access to WHT flows, unable to input WHT data"}
-]
-
-counterpart_data = []
 
 @app.route('/')
 def index():
