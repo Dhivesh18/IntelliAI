@@ -137,7 +137,7 @@
 
     <script>
         let currentConfirmationMessage = '';
-        let userEmail = '';
+        let userid = '';
         let role = '';
 
         function addMessage(sender, message) {
@@ -150,14 +150,14 @@
         }
 
         function submitEmail() {
-            userEmail = document.getElementById('email-input').value.trim();
+            userid = document.getElementById('email-input').value.trim();
             
-            if (userEmail === "") {
+            if (userid === "") {
                 alert("Please enter your email address.");
                 return;
             }
 
-            addMessage('user', 'Email: ' + userEmail);
+            addMessage('user', 'User id: ' + userid);
             document.getElementById('email-section').classList.remove('active');
             document.getElementById('query-section').classList.add('active');
             addMessage('bot', 'How can I assist you today?');
@@ -175,7 +175,7 @@
             
             if (textMessage.trim() !== "") {
                 addMessage('user', textMessage);
-                fetch('/text_to_role', {
+                fetch('/text', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                     body: new URLSearchParams({ 'textMessage': textMessage })
@@ -185,13 +185,15 @@
                     addMessage('bot', data.response_message);
                     if (data.response_message.includes("No matching role found") || data.response_message.includes("No Portfolio found") || data.response_message.includes("Portfolio not active")|| data.response_message.includes("No matching gop found")) {
                         addMessage('bot', 'Please check with Eliot support.');
-                    } else if (data.response_message.includes("Matching Role:")|| data.response_message.includes("Matching Portfolio GOP:")|| data.response_message.includes("Matching GOP:")) {
+                    } else if ((data.response_message.toLowerCase().includes("roles")|| data.response_message.toLowerCase().includes("role")|| data.response_message.toLowerCase().includes("gops")|| data.response_message.toLowerCase().includes("gop")) && (data.response_message.toLowerCase().includes("approval") || data.response_message.toLowerCase().includes("manager"))) {
+                        // addMessage('bot', data.response_message);
                         currentConfirmationMessage = data.response_message;
-                        role = extractRoleFromMessage(data.response_message);
+                        role = data.response_message;
                         document.getElementById('query-section').classList.remove('active');
                         document.getElementById('confirmation-section').classList.add('active');
-                        addMessage('bot', 'Please type "yes" to confirm or "no" to cancel.');
-                    }
+                        addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
+                    
+}
                 });
                 textInput.value = '';
             }
@@ -208,51 +210,77 @@
                 .then(response => response.json())
                 .then(data => {
                     addMessage('bot', data.response_message);
-                    if (data.response_message.includes("No matching role found") || data.response_message.includes("No Portfolio found") || data.response_message.includes("Portfolio not active") || data.response_message.includes("No matching gop found")) {
+                    if (data.response_message.includes("No matching role found") || data.response_message.includes("No Portfolio found") || data.response_message.includes("Portfolio not active")|| data.response_message.includes("No matching gop found")) {
                         addMessage('bot', 'Please check with Eliot support.');
-                    } else if (data.response_message.includes("Matching Role:")|| data.response_message.includes("Matching Portfolio GOP:")|| data.response_message.includes("Matching GOP:")){
+                    } else if ((data.response_message.toLowerCase().includes("roles")|| data.response_message.toLowerCase().includes("role")|| data.response_message.toLowerCase().includes("gops")|| data.response_message.toLowerCase().includes("gop")) && (data.response_message.toLowerCase().includes("approval") || data.response_message.toLowerCase().includes("manager"))) {
+                        // addMessage('bot', data.response_message);
                         currentConfirmationMessage = data.response_message;
-                        role = extractRoleFromMessage(data.response_message);
+                        role = data.response_message;
                         document.getElementById('query-section').classList.remove('active');
                         document.getElementById('confirmation-section').classList.add('active');
-                        addMessage('bot', 'Please type "yes" to confirm or "no" to cancel.');
-                    }
+                        addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
+}
                 });
 
                 // Reset the file input after processing
                 fileInput.value = ''; 
             }
         }
-
-        function extractRoleFromMessage(message) {
-            const match = message.match(/Matching Role:\s*(\S+)/);
-            return match ? match[1] : '';
-        }
-
+ 
         function confirmAction() {
     const confirmationInput = document.getElementById('confirmation-input').value.trim().toLowerCase();
-
     if (confirmationInput === 'yes') {
-        addMessage('user', 'Yes');
+    addMessage('user', 'Yes');
+    document.getElementById('confirmation-section').classList.remove('active');
+    // addMessage('bot', currentConfirmationMessage);
+    // Call the /text_to_role endpoint
+    fetch('/text_to_role', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({'userid': userid, 
+        'textMessage': currentConfirmationMessage })
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Get the response message from the backend (role is already identified)
+        let role = data.response_message;
+        addMessage('bot', role)
+        // Display the role-specific message from the backend
+        if (data.response_message.includes("Matching GOP:") || data.response_message.includes('Matching Role:')){
+            // addMessage('bot', role); 
+                // Deactivate all other sections and reactivate the query section
+                document.getElementById('manager-email-section').classList.add('active');
+                addMessage('bot', 'Please enter your manager\'s email id:');
+        }
+        else{
         document.getElementById('confirmation-section').classList.remove('active');
-        document.getElementById('manager-email-section').classList.add('active');
-        addMessage('bot', 'Please enter your manager\'s email id:');
-    } else if (confirmationInput === 'no') {
-        addMessage('user', 'No');
-        addMessage('bot', 'Action canceled.');
-
-        // Deactivate all other sections and reactivate the query section
-        document.getElementById('confirmation-section').classList.remove('active');
-        document.getElementById('manager-email-section').classList.remove('active');
-        document.getElementById('more-requests-section').classList.remove('active');
         document.getElementById('query-section').classList.add('active');
-
-        // Clear input fields
         document.getElementById('confirmation-input').value = '';
-    } else {
-        addMessage('bot', 'Invalid response. Please type "yes" to confirm or "no" to cancel.');
     }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        addMessage('bot', 'There was an error processing your request. Please try again later.');
+        document.getElementById('confirmation-section').classList.remove('active');
+        document.getElementById('query-section').classList.add('active');
+        document.getElementById('confirmation-input').value = '';
+    });
+
+} else if (confirmationInput === 'no') {
+    addMessage('user', 'No');
+    addMessage('bot', 'Action canceled.');
+
+    // Deactivate all other sections and reactivate the query section
+    document.getElementById('confirmation-section').classList.remove('active');
+    document.getElementById('query-section').classList.add('active');
+
+    // Clear input fields
+    document.getElementById('confirmation-input').value = '';
+} else {
+    addMessage('bot', 'Invalid response. Please type "yes" to confirm or "no" to cancel.');
 }
+
+        }
 
         function sendEmail() {
             const managerEmail = document.getElementById('manager-email-input').value.trim();
@@ -266,9 +294,9 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams({
-                    'userEmail': userEmail,
-                    'managerEmail': managerEmail,
-                    'role': role
+                    'userid': userid,
+                    'managerEmail': managerEmail
+                    ,'role': role
                 })
             })
             .then(response => response.json())

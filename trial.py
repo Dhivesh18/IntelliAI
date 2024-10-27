@@ -6,6 +6,7 @@ from email.mime.text import MIMEText
 import uuid
 import openai
 import json
+import re
 
 # Load the JSON configuration
 file_path = '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/key.json'
@@ -29,6 +30,9 @@ gop_data = [
         ],
         "FX" : [
             {"Portfolio": "FX-GY-NOMGT", "Status": "Active"}
+        ],
+        "SNIKO" : [
+            {"Portfolio": "SN-FX-GY", "Status": "Active"}
         ]
     }
 ]
@@ -68,18 +72,23 @@ def find_gop_using_ptf(user_query, gop_data):
             for portfolio_info in portfolios:
                 if portfolio_info["Portfolio"] in user_query:
                     # found_gop = {"GOP": gop_name, "Portfolio": portfolio_info}
-                    found_gop = gop_name if portfolio_info["Status"] is "Active" else f"{portfolio_info["Portfolio"]} - Portfolio not active"
+                    found_gop = gop_name if portfolio_info["Status"] == "Active" else f"{portfolio_info["Portfolio"]} - Portfolio not active"
                     break
     return found_gop if found_gop is not None else "No Portfolio found."
 
 def match_gop(user_query, gop_data):
-    for gop in user_query.split():
+    user_query = re.findall(r'\b\w+\b', user_query)
+    print(user_query)
+    for gop in user_query:
         if gop in gop_data[0].keys():
             return gop
     return "No matching gop found."
 
 def counterpart(user_query, counterpart_data):
+    # No counterpart Found
     return
+
+# You have not the authorization to perform this action. (technical authorizationn: RUN with discrimnant 'SNIKO' on process group 'EVENT PROCESSING')
 
 def generate_request_id():
     return str(uuid.uuid4())
