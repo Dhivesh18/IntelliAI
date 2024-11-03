@@ -105,7 +105,7 @@
         <div class="chat-box" id="chat-box"></div>
 
         <div id="email-section" class="section active">
-            <input type="email" id="email-input" placeholder="Your email">
+            <input type="email" id="email-input" placeholder="Your login id">
             <button onclick="submitEmail()">Submit</button>
         </div>
 
@@ -164,69 +164,92 @@
         }
 
         function sendMessage() {
-            const textInput = document.getElementById('text-input');
-            const fileInput = document.getElementById('file-input');
-            const file = fileInput.files[0];
-            const textMessage = textInput.value;
+    const textInput = document.getElementById('text-input');
+    const fileInput = document.getElementById('file-input');
+    const file = fileInput.files[0];
+    const textMessage = textInput.value;
 
-            if (textMessage.trim() === "" && !file) {
-                return;
+    if (textMessage.trim() === "" && !file) {
+        return;
+    }
+
+    // Check if textMessage likely contains an SQL query
+    const isSQLQuery = textMessage.toLowerCase().includes("select") || 
+                       textMessage.toLowerCase().includes("insert") || 
+                       textMessage.toLowerCase().includes("update") || 
+                       textMessage.toLowerCase().includes("delete") || 
+                       textMessage.toLowerCase().includes("join");
+
+    if (textMessage.trim() !== "") {
+        addMessage('user', textMessage);
+
+        // Choose the appropriate endpoint based on whether it's an SQL query
+        const endpoint = isSQLQuery ? '/sql' : '/text';
+
+        fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ 'textMessage': textMessage })
+        })
+        .then(response => response.json())
+        .then(data => {
+            addMessage('bot', data.response_message);
+            if (data.response_message.includes("No matching role found") || 
+                data.response_message.includes("No Portfolio found") || 
+                data.response_message.includes("Portfolio not active") || 
+                data.response_message.includes("No matching gop found")) {
+                addMessage('bot', 'Please check with Eliot support.');
+            } else if ((data.response_message.toLowerCase().includes("roles") || 
+                        data.response_message.toLowerCase().includes("role") || 
+                        data.response_message.toLowerCase().includes("gops") || 
+                        data.response_message.toLowerCase().includes("gop")) && 
+                       (data.response_message.toLowerCase().includes("approval") || 
+                        data.response_message.toLowerCase().includes("manager"))) {
+                currentConfirmationMessage = data.response_message;
+                role = data.response_message;
+                document.getElementById('query-section').classList.remove('active');
+                document.getElementById('confirmation-section').classList.add('active');
+                addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
             }
-            
-            if (textMessage.trim() !== "") {
-                addMessage('user', textMessage);
-                fetch('/text', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: new URLSearchParams({ 'textMessage': textMessage })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    addMessage('bot', data.response_message);
-                    if (data.response_message.includes("No matching role found") || data.response_message.includes("No Portfolio found") || data.response_message.includes("Portfolio not active")|| data.response_message.includes("No matching gop found")) {
-                        addMessage('bot', 'Please check with Eliot support.');
-                    } else if ((data.response_message.toLowerCase().includes("roles")|| data.response_message.toLowerCase().includes("role")|| data.response_message.toLowerCase().includes("gops")|| data.response_message.toLowerCase().includes("gop")) && (data.response_message.toLowerCase().includes("approval") || data.response_message.toLowerCase().includes("manager"))) {
-                        // addMessage('bot', data.response_message);
-                        currentConfirmationMessage = data.response_message;
-                        role = data.response_message;
-                        document.getElementById('query-section').classList.remove('active');
-                        document.getElementById('confirmation-section').classList.add('active');
-                        addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
-                    
+        });
+        textInput.value = '';
+    }
+
+    if (file) {
+        addMessage('user', 'You attached an image.');
+        const formData = new FormData();
+        formData.append('image', file);
+
+        fetch('/image_to_text', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            addMessage('bot', data.response_message);
+            if (data.response_message.includes("No matching role found") || 
+                data.response_message.includes("No Portfolio found") || 
+                data.response_message.includes("Portfolio not active") || 
+                data.response_message.includes("No matching gop found")) {
+                addMessage('bot', 'Please check with Eliot support.');
+            } else if ((data.response_message.toLowerCase().includes("roles") || 
+                        data.response_message.toLowerCase().includes("role") || 
+                        data.response_message.toLowerCase().includes("gops") || 
+                        data.response_message.toLowerCase().includes("gop")) && 
+                       (data.response_message.toLowerCase().includes("approval") || 
+                        data.response_message.toLowerCase().includes("manager"))) {
+                currentConfirmationMessage = data.response_message;
+                role = data.response_message;
+                document.getElementById('query-section').classList.remove('active');
+                document.getElementById('confirmation-section').classList.add('active');
+                addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
+            }
+        });
+
+        // Reset the file input after processing
+        fileInput.value = ''; 
+    }
 }
-                });
-                textInput.value = '';
-            }
-            
-            if (file) {
-                addMessage('user', 'You attached an image.');
-                const formData = new FormData();
-                formData.append('image', file);
-
-                fetch('/image_to_text', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    addMessage('bot', data.response_message);
-                    if (data.response_message.includes("No matching role found") || data.response_message.includes("No Portfolio found") || data.response_message.includes("Portfolio not active")|| data.response_message.includes("No matching gop found")) {
-                        addMessage('bot', 'Please check with Eliot support.');
-                    } else if ((data.response_message.toLowerCase().includes("roles")|| data.response_message.toLowerCase().includes("role")|| data.response_message.toLowerCase().includes("gops")|| data.response_message.toLowerCase().includes("gop")) && (data.response_message.toLowerCase().includes("approval") || data.response_message.toLowerCase().includes("manager"))) {
-                        // addMessage('bot', data.response_message);
-                        currentConfirmationMessage = data.response_message;
-                        role = data.response_message;
-                        document.getElementById('query-section').classList.remove('active');
-                        document.getElementById('confirmation-section').classList.add('active');
-                        addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
-}
-                });
-
-                // Reset the file input after processing
-                fileInput.value = ''; 
-            }
-        }
- 
         function confirmAction() {
     const confirmationInput = document.getElementById('confirmation-input').value.trim().toLowerCase();
     if (confirmationInput === 'yes') {
