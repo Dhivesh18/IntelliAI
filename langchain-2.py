@@ -10,6 +10,7 @@ import base64
 import requests
 import smtplib
 from email.mime.text import MIMEText
+# from openai import OpenAI
 import uuid
 import openai
 import json
@@ -24,7 +25,8 @@ os.environ["OPENAI_API_KEY"] = key['API_KEY']
 file_path= '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/Info Doc/'
 
 # List of PDF files
-pdf_files = ['AMGEO.pdf','Eliot.pdf','Error.pdf','Ole_feeding.pdf','role_access.pdf', 'gop_access.pdf','XDS.pdf', 'Sample_schema.pdf']
+pdf_files = ['AMGEO.pdf','Eliot.pdf','Error.pdf','Ole_feeding.pdf','role_access.pdf', 'gop_access.pdf','XDS.pdf']
+# , 'Sample_schema.pdf']
             #  ,'Table_schema_dict.pdf']  # Add more PDF paths as needed
 
 # Concatenate all the content from multiple PDFs
@@ -58,7 +60,7 @@ document_search = FAISS.from_texts(texts, embeddings)
 
 # document_search
 
-chain = load_qa_chain(OpenAI(temperature = 0), chain_type="stuff")
+chain = load_qa_chain(OpenAI(temperature = 0.2), chain_type="stuff")
 
 app = Flask(__name__)
 
@@ -72,14 +74,14 @@ user = {
          }
     }
 gop_perimeter = {
-            'IT':{'Gop':{'PDS'},'Perimeter':{'ABD','BCD'}},
+            'IT':{'Gop':{'PDS'},'Perimeter':{'ABD','BCD','KJH'}},
             'TS':{'Gop':{},'Perimeter':{'ABD'}},
             'RD':{'Gop':{'*All*'},'Perimeter':{'BCD','KJH'}}
             }
 gop_data = {
         "PDS": {"Perimeter": "ABD","Status": "Active","RDB" : "1234","Zone":"EUR"},
         "XYZ": {"Perimeter": "BCD","Status": "Active","RDB" : "2345","Zone":"USD"},
-        "FX": {"Perimeter": "KJH","Status": "Not Active","RDB" : "3456","Zone":"HK"},
+        "FX": {"Perimeter": "KJH","Status": "Active","RDB" : "3456","Zone":"HK"},
         "SNI": {"Perimeter": "BCD","Status": "Not Active","RDB" : "4567","Zone":"EUR"},
         "J3": {"Perimeter": "KJH","Status": "Active","RDB" : "5678","Zone":"EUR"}
     }
@@ -95,7 +97,7 @@ ptf_data = [
             {"Portfolio": "XYZ_ABC", "Status": "Active"}
         ],
         "FX" : [
-            {"Portfolio": "FX-GY-NOMGT", "Status": "Not Active"},
+            {"Portfolio": "FX-GY-NOMGT", "Status": "Active"},
             {"Portfolio": "GY-MGT", "Status": "Not Active"}
         ],
         "SNI" : [
@@ -119,210 +121,111 @@ roles_data = [
 ]
 counterpart_data = []
 
-# Define the schema description
-schema_description = """
-Generate an efficient SQL query optimized for large datasets and please don’t change the table names and column names:
-1. Table: ACTION - Details about Share.
-	⁃	id_titre (String, Primary Key): Unique identifier for each share.
-	⁃	id_sous_jacent (Integer): Identifier for the underlying asset.
-	⁃	type (String): Type of action.
-	⁃	flag_actif (Boolean): Indicates active status of the share.
+schema_description ='''
+Investment Banking Database Model Document
+This document outlines the structure and relationships of the database model for tracking underlying securities, products derived from them, and deals made on these products. The database model consists of three main categories of tables: Underlying Tables, Product Tables, and Deal/Trade Tables.
+1. Underlying Tables
+These tables capture the details of basic financial instruments that can be used to create derivative products.
+SHARE Table
+Description: Stores information on shares.
+Primary Key: share_id
+Columns:
+share_id (VARCHAR): Unique identifier for each share.
+isin (VARCHAR): International Securities Identification Number for the share.
+active (TINYINT): Flag indicating if the share is active (1 for active, 0 for inactive).
+market_id (VARCHAR): Identifier for the market where the share is traded.
+INDEX Table
+Description: Stores information on indices.
+Primary Key: index_id
+Columns:
+index_id (VARCHAR): Unique identifier for each index.
+active (TINYINT): Flag indicating if the index is active (1 for active, 0 for inactive).
+market_id (VARCHAR): Identifier for the market to which the index belongs.
 
-2. Table: FUND - Details about Fund.
-	⁃	id_titre (String, Primary Key): Unique identifier for each fund.
-	⁃	id_sous_jacent (Integer): Identifier for the underlying asset.
-	⁃	type (String): Type of fund.
-	⁃	id_pays (String): Country code for the fund.
-	⁃	flag_actif (Boolean): Indicates active status of the fund.
- 
-3. Table: INDICE - Details about Index.
-	⁃	id_indice (String, Primary Key): Unique identifier for each index.
-	⁃	id_sous_jacent (Integer): Identifier for the underlying asset.
-	⁃	id_marche (String): Market code for the index.
-	⁃	id_devise (String): Currency for this index.
+2. Product Tables
+Product tables store derivative products based on underlying assets such as shares and indices.
+OPTION Table
+Description: Stores option contracts, which can be based on shares or indices.
+Primary Key: contract_id
+Columns:
+contract_id (INT): Unique identifier for each option contract.
+underlying_id (VARCHAR): Identifier of the underlying asset, referencing either share_id from SHARE table or index_id from INDEX table.
+contract_name (VARCHAR): Name of the option contract.
+maturity (DATE): Maturity date of the option contract.
+type (CHAR): Type of option (C for Call, P for Put).
+Relationships:
+underlying_id is a foreign key referencing either share_id in SHARE or index_id in INDEX based on the underlying asset.
+FUTURE Table
+Description: Stores future contracts, which can also be based on shares or indices.
+Primary Key: contract_id
+Columns:
+contract_id (INT): Unique identifier for each future contract.
+underlying_id (VARCHAR): Identifier of the underlying asset, referencing either share_id from SHARE table or index_id from INDEX table.
+contract_name (VARCHAR): Name of the future contract.
+maturity (DATE): Maturity date of the future contract.
+Relationships:
+underlying_id is a foreign key referencing either share_id in SHARE or index_id in INDEX based on the underlying asset.
 
-4. Table: PANIER - Details about Basket.
-	⁃	id_panier (String, Primary Key): Unique identifier for each basket.
-	⁃	id_sous_jacent (Integer): Identifier for the underlying asset.
-	⁃	id_marche (String): Market code for the basket.
-	⁃	id_devise (String): Currency code for the basket.
+3. Deal/Trade Tables
+Deal tables store information on trades executed on products or directly on underlying securities. Each trade is versioned, allowing tracking of modifications and deletions.
+SECURITY_DEALS Table
+Description: Stores details of trades executed directly on shares, without involving derivative products.
+Primary Key: deal_id
+Columns:
+deal_id (INT): Unique identifier for each security trade.
+status (CHAR): Status of the trade (I for Initial, R for Recreated/Modified, D for Deleted, C for Cancelled).
+date_modified (DATETIME): Timestamp of the most recent modification.
+date_st (DATETIME): Timestamp indicating when this version of the trade was stopped. NULL for active trades.
+trade_date (DATE): Execution date of the trade.
+value_date (DATE): Date when the trade’s value is realized.
+trader_id (INT): Identifier for the trader executing the deal.
+share_id (VARCHAR): Identifier of the underlying share from the SHARE table.
+Relationships:
+share_id is a foreign key referencing share_id in the SHARE table.
+OPTION_DEALS Table
+Description: Stores details of trades executed on options.
+Primary Key: deal_id
+Columns:
+deal_id (INT): Unique identifier for each option trade.
+status (CHAR): Status of the trade (same as above).
+date_modified (DATETIME): Timestamp of the most recent modification.
+date_st (DATETIME): Timestamp indicating when this version of the trade was stopped. NULL for active trades.
+trade_date (DATE): Execution date of the trade.
+value_date (DATE): Date when the trade’s value is realized.
+trader_id (INT): Identifier for the trader executing the deal.
+contract_name (VARCHAR): Name of the contract, referencing contract_name in the OPTION table.
+Relationships:
+contract_name is a foreign key referencing contract_name in the OPTION table.
+FUTURE_DEALS Table
+Description: Stores details of trades executed on futures.
+Primary Key: deal_id
+Columns:
+deal_id (INT): Unique identifier for each future trade.
+status (CHAR): Status of the trade (same as above).
+date_modified (DATETIME): Timestamp of the most recent modification.
+date_st (DATETIME): Timestamp indicating when this version of the trade was stopped. NULL for active trades.
+trade_date (DATE): Execution date of the trade.
+value_date (DATE): Date when the trade’s value is realized.
+trader_id (INT): Identifier for the trader executing the deal.
+contract_name (VARCHAR): Name of the contract, referencing contract_name in the FUTURE table.
+Relationships:
+contract_name is a foreign key referencing contract_name in the FUTURE table.
 
-5. Table: AVMO_TITRE - Details about Regular Market Deals (External Deals).
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_operation (Integer): Deal id.
-	⁃	clearer_id_marche (String): Market clearer identifier.
-	⁃	clearer_id_compte (String): Clearer's account identifier.
-	⁃	id_titre (String): Name of share/fund/warrant. We can join ACTION, FUND, DESC_WARRANT tables.
-	⁃	portf_id_tiers (String): Name of portfolio. We can join PORTEFEUILLE table for more information about portfolio.
-	⁃	counrtier_id_tiers (String): 
-	⁃	id_utilisateur (String): Detail of User/Trader id created for that deal. 
-	⁃	sens (String): Buy or Sell information.
-	⁃	quantite (Integer): Quantity of the deal.
-	⁃	prix (Integer): Unit Price of the Deal.
-	⁃	date_operation (Date): Date of the deal created.
-	⁃	etat_eng (String): Status of the deal. I - Initial version, R - Revised version, C - Cancelled version, D - Deleted version.
-	⁃	date_valeur (Date): Value Date for the deal.
-	⁃	date_stop (Date): If date is null then it is active else deal is deleted and date stamp is assigned to this column.
-
-6. Table: ACHAT_VENTE_SO - Details about Clearing Security Deals.
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_operation (Integer): Deal id.
-	⁃	countier_id_tiers
-	⁃	cash_id_compte
-	⁃	id_titre (String): Name of share/fund/warrant. We can join ACTION, FUND, DESC_WARRANT tables.
-	⁃	client_id_tiers
-	⁃	portf_id_tiers (String): Name of portfolio. We can join PORTEFEUILLE table for more information about portfolio.
-	⁃	id_utilisateur (String): Detail of User/Trader id created for that deal. 
-	⁃	sens (String): Buy or Sell information.
-	⁃	quantite (Integer): Quantity of the deal.
-	⁃	prix (Integer): Unit Price of the Deal.
-	⁃	date_operation (Date): Date of the deal created.
-	⁃	etat_eng (String): Status of the deal. I - Initial version, R - Revised version, C - Cancelled version, D - Deleted version.
-	⁃	date_valeur (Date): Value Date for the deal.
-	⁃	date_stop (Date): If date is null then it is active else deal is deleted and date stamp is assigned to this column.
-	⁃	id_marche (String): Market code for the basket.
-
-7. Table: ACHAT_VENTE_OTC - Details about all OTC deals which involves both Internal and External Deals.
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_operation (Integer): Deal id.
-	⁃	prix_id_devise
-	⁃	id_utilisateur (String): Detail of User/Trader id created for that deal. 
-	⁃	portf_id_tiers (String): Name of portfolio. We can join PORTEFEUILLE table for more information about portfolio.
-	⁃	sens (String): Buy or Sell information.
-	⁃	quanitie (Integer): Quantity of the deal.
-	⁃	prix_unitaire (Integer): Unit Price of the Deal.
-	⁃	date_operation (Date): Date of the deal created.
-	⁃	etat_eng (String): Status of the deal. I - Initial version, R - Revised version, C - Cancelled version, D - Deleted version.
-	⁃	date_valeur (Date): Value Date for the deal.
-	⁃	flag_externe (Boolean): if flag is 1 then OTC external deal else OTC Internal Deal.
-	⁃	date_stop (Date): If date is null then it is active else deal is deleted and date stamp is assigned to this column.
-	⁃	quantite_en_vie (Integer): Remaining Quantity.
-	⁃	categorie (String): Category of the Deal.
-
-8. Table: OTC_EXTERNE - Details about External OTC deals.
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_operation (Integer): Deal id.
-	⁃	client_id_tiers (String): Counterpart Details.
-
-9. Table: OTC_INTERNE - Details about Internal OTC deals.
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_operation (Integer): Deal id. 
-	⁃	id_tiers (String): Name of portfolio. We can join PORTEFEUILLE table for more information about portfolio.
-
-10. Table: CALL_PUT - Details about Contact details
-	⁃	nom_contrat
-	⁃	strike
-	⁃	call_put
-	⁃	annee
-	⁃	mois 
-	⁃	id_valeur
-
-11. Table: META_CALL_PUT 
-	⁃	nom_contrat
-	⁃	id_sous_jacent
-	⁃	id_devise
-	⁃	id_marche
-	⁃	ame_eurm
-	⁃	livraison
-
-12. Table: AVMO_OPTION - Details about Option Deals.
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_operation (Integer): Deal id.
-	⁃	nom_contrat (String): 
-	⁃	strike (Integer):
-	⁃	call_put (String):
-	⁃	annee (Integer):
-	⁃	mois (Integer):
-	⁃	clearer_id_compte
-	⁃	portf_id_tiers (String): Name of portfolio. We can join PORTEFEUILLE table for more information about portfolio.
-	⁃	countier_id_tiers
-	⁃	id_utilisateur (String): Detail of User/Trader id created for that deal. 
-	⁃	sensm quantite 
-	⁃	prix (Integer): Unit Price of the Deal.
-	⁃	date_operation (Date): Date of the deal created.
-	⁃	etat_eng (String): Status of the deal. I - Initial version, R - Revised version, C - Cancelled version, D - Deleted version.
-	⁃	date_valeur (Date): Value Date for the deal.
-	⁃	date_stop (Date): If date is null then it is active else deal is deleted and date stamp is assigned to this column.
-
-13. Table: AVI_VALEUR - Details about Internal Deals.
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_operation (Integer): Deal id.
-	⁃	acheteur_id_tiers (String): Name of the Buying Portfolio. We can join PORTEFEUILLE table for more information about portfolio.
-	⁃	vendeur_id_tiers (String): Name of the Selling Portfolio. We can join PORTEFEUILLE table for more information about portfolio.
-	⁃	id_valeur
-	⁃	id_utilisateur (String): Detail of User/Trader id created for that deal. 
-	⁃	sens (String): Buy or Sell information.
-	⁃	quanitie (Integer): Quantity of the deal.
-	⁃	prix_element (Integer): Unit Price of the Deal.
-	⁃	date_operation (Date): Date of the deal created.
-	⁃	etat_eng (String): Status of the deal. I - Initial version, R - Revised version, C - Cancelled version, D - Deleted version.
-	⁃	date_valeur (Date): Value Date for the deal.
-	⁃	date_stop (Date): If date is null then it is active else deal is deleted and date stamp is assigned to this column.
-
-28. Table: CENTRE_COMPTABLE - Details about GOP.
-	⁃	id_centre (String): Name of the GOP. We can join PORTEFEUILLE table for more information about the portfolios.
-	⁃	id_groupe (String): Name of the Group. We can join GROUPE_COMPTABLE table  for more information about the group.
-	⁃	nom_place (String):
-	⁃	code_bdr (Integer): BDR No. For each gop.
-	⁃	date_creation (Date): Creation Date of GOP.
-	⁃	id_zone (String): GOP comes under specific Zone like EUR, HK, USD, etc… 
-	⁃	flag_actif (Boolean): If flag is 1 then GOP is active else GOP is not active.
-
-29. Table: PORTEFEUILLE - Details about Portfolio.
-	⁃	id_tiers (String): Name of the Portfolio.
-	⁃	id_centre (String): Name of the GOP. We can join CENTRE_COMPTABLE table for more information about the GOP.
-	⁃	date_creation (Date): Creation Date of Portfolio.
-
-30. Table: GROUPE_COMPTABLE - Details about Group.
-	⁃	id_groupe (String): Name of the group. We can join CENTRE_COMPTABLE table  for more information about the gop.
-	⁃	id_societe (String): Name of the Societe. We can join SOCIETE table for more information about the Societe.
-	⁃	id_devise (String): Currency of the Group.
-	⁃	libelle (String):
-	⁃	code_SG (Integer):
-
-31. Table: SOCIETE - Details about Societe.
-	⁃	id_societe (String): Name of the Societe. We can join GROUPE_COMPTABLE for more information about the group.
-	⁃	libelle (String): 
-	⁃	code_societe (Integer):
-	⁃	code_bdr (Integer): BDR number.
-	⁃	id_devise (String): Currency of the Societe.
-	⁃	nationalite (String): Zone of the Societe.
-
-32. Table: UTILISATEUR - Details about User/Trader.
-	⁃	id_utilisateur (Integer): user login id.
-	⁃	nom (String): Last Name.
-	⁃	prenom (String): First Name
-	⁃	email (String): user mail id.
-	⁃	sesame_id (String): windows id.
-
-36. Table: DESC_WARRANT - Details about Warrant.
-	⁃	id_titre (String, Primary Key): Unique identifier for each warrant.
-	⁃	date_saisie (Date): Last modified Date.
-	⁃	id_def
-	⁃	id_clp
-	⁃	date_stop (Date): If date is null then it is active else deal is deleted and date stamp is assigned to this column.
-	⁃	categorie (String): Category of the Deal.
-	⁃	id_produit_sales
-
-41. Table: SORTIE_GENERIQUE - Details about Eole Feeding Deals (It will get purged after 5 days, if you want to see this deal then you need to Resend the deal).
-
-42. Table: VALEUR_MOBILIERE 
-	⁃	id_titre 
-	⁃	id_marche 
-	⁃	id_valeur 
-	⁃	id_societe 
-	⁃	emis_en_id_devise
-
-Assumptions: 
-- Assume columns with similar names may represent relationships.
-
-Key Requirements for Queries:
-1. Always use indexed columns for filtering and joins.
-2. Avoid using SELECT *; specify required columns.
-3. Optimize date range queries and aggregations.
-4. Use LIMIT to restrict the result set when appropriate.
-5. Ensure queries are efficient for handling large datasets.
-"""
+Versioning Workflow for Deal Tables
+Initial Creation:
+When a trade is created, status is set to I.
+date_modified captures the creation timestamp.
+date_st is set to NULL, indicating the trade is active.
+Modification:
+When a trade is modified, a new row is created with status set to R.
+The previous version’s date_st is updated to the modification timestamp.
+The new version has date_modified set to the modification timestamp, with date_st as NULL.
+Deletion:
+When a trade is deleted, status is changed to D.
+The date_st is set to the deletion timestamp.
+Querying Active Trades:
+Use WHERE date_st IS NULL to retrieve only active trades.
+'''
 
 def account(id):
     if id in user['login']:
@@ -334,24 +237,28 @@ def account(id):
             return ['Account is not active.']
     else:
         return ['No user id found.']
+
+def gop_perimeter_check(gop, profile):
+    print(gop, profile, gop_perimeter[profile]['Gop'], gop_perimeter[profile])
     
-def gop_perimeter_check(gop,profile):
-    print(profile, gop_perimeter[profile]['Gop'],gop_perimeter[profile])
-    if profile in gop_perimeter:  
+    if profile in gop_perimeter:
         if gop in gop_perimeter[profile]['Gop']:
-            return f'{gop} Gop access is already there.'
+            return f'{gop} GOP access is already present for profile {profile}.'
+        
         else:
             gop_profile = gop_data[gop]['Perimeter']
             act_flg = gop_data[gop]['Status']
-            if gop_profile in gop_perimeter[profile]['Perimeter']: 
+            
+            if gop_profile in gop_perimeter[profile]['Perimeter']:
                 if act_flg == 'Active':
-                    return f'Matching GOP: {gop}'
+                    return f'Matching GOP: {gop} is available for profile: {profile}.'
                 else:
-                    return f'Gop is not active.'
-            else: 
-                return f'User don\'t have access to {gop_profile} perimeter'
+                    return f'{gop} is in {gop_profile} perimeter but is not active.'
+            else:
+                return f'User with profile {profile} does not have access to the {gop_profile} perimeter for GOP {gop}.'
+    
     else:
-        return 'No profile found'
+        return f'No matching profile found for {profile}.'
 
 # Function to encode the image
 def encode_image(image_path):
@@ -361,17 +268,19 @@ def encode_image(image_path):
 def langchain_doc(query):
     docs = document_search.similarity_search(query)
     r=chain.run(input_documents=docs, question=query)
+    print('langchain',r)
     return r
 
 # Function to match user query with role keywords using partial matching
 def match_role(role, roles_data):
     for i in range(len(roles_data)):
         if role.strip() in roles_data[i]['Role']:
-            return f'{roles_data[i]['Role']} - {roles_data[i]['Description']}'
+            return f'{roles_data[i]['Role']}'
     return "No matching role found. - No description available"
 
 def find_gop_using_ptf(ptf, ptf_data):
     found_gop=None
+    print(ptf)
     for i,j in ptf_data[0].items():
         for k in range(len(j)):
             if j[k]['Portfolio'] in ptf.strip():
@@ -379,48 +288,7 @@ def find_gop_using_ptf(ptf, ptf_data):
                 break
     return found_gop if found_gop is not None else "Not found"
 
-def counterpart(user_query, counterpart_data):
-    # No counterpart Found
-    return
-
-# You have not the authorization to perform this action. (technical authorizationn: RUN with discrimnant 'SNIKO' on process group 'EVENT PROCESSING')
-
-def generate_request_id():
-    return str(uuid.uuid4())
-
-@app.route('/text', methods=['POST'])
-def text():
-    text_response = request.form.get('textMessage', '')
-    k = langchain_doc(text_response)
-    print(k)
-    return jsonify({'response_message': k})
-
-@app.route('/send_email', methods = ['POST'])
-def send_approval_email():
-    sender_email = "dhivesh18122000@gmail.com"  # Replace with your email
-    sender_password = 'stwf byvp tuhv lskz'
-    role = request.form['role']
-    # print(role)
-    user_id = request.form['userid']
-    manager_email = request.form['managerEmail']
-    # confirmation_message = request.form['confirmationMessage']
-    request_id = generate_request_id()
-    if 'role' in role.lower() or 'roles' in role.lower():
-        rg = 'role'
-    elif 'gop' in role.lower() or 'gops' in role.lower() or 'portfolio' in role.lower() or 'portfolios' in role.lower():
-        rg = 'gop'
-
-    subject = f"Approval Request for {rg} access"
-    url=f'https://docs.google.com/forms/d/e/1FAIpQLScC4AvYbx9GIolMmjQQn62mfItYURw0mAZxUEyu4bWHN1ffNQ/viewform?usp=pp_url&entry.1314294973={request_id}&entry.1971473862={rg}'
-    body = f'''Hello,
-        User {user_id} is requesting access to the {rg}.
-        The request ID for this approval is {request_id}.
-        Please review and provide your approval on the below link.
-        {url}
-
-        Sincerely,
-        Eliot Team'''
-    
+def mail(body,subject,sender_email,manager_email,sender_password):
     msg = MIMEText(body)
     msg['Subject'] = subject
     msg['From'] = sender_email
@@ -435,6 +303,100 @@ def send_approval_email():
 
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
+    
+def counterpart(user_query, counterpart_data):
+    # No counterpart Found
+    return
+
+# You have not the authorization to perform this action. (technical authorizationn: RUN with discrimnant 'SNIKO' on process group 'EVENT PROCESSING')
+
+def generate_request_id():
+    return str(uuid.uuid4())
+
+def role_check(id,role):
+    api_url = 'http://127.0.0.1:8080/getrole'
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        user_role = [req for req in response.json() if req.get('user_id') == id]
+        for i in user_role:
+            if i['role']==role:
+                return 'User already have access to this Role'
+        return 'No role access given for this user'
+    else:
+        print(f"Failed to fetch requests: {response.status_code}")
+        return []
+
+def gop_check(id,gop):
+    api_url = 'http://127.0.0.1:8080/getgop'
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        user_gop = [req for req in response.json() if req.get('user_id') == id]
+        for i in user_gop:
+            if i['gop']==gop:
+                return 'User already have access to this gop'
+        return 'No gop access given for this user'
+    else:
+        print(f"Failed to fetch requests: {response.status_code}")
+        return []
+    
+@app.route('/text', methods=['POST'])
+def text():
+    text_response = request.form.get('textMessage', '')
+    k = langchain_doc(text_response)
+    print(k)
+    return jsonify({'response_message': k})
+
+@app.route('/send_email', methods = ['POST'])
+def send_approval_email():
+    sender_email = "dhivesh18122000@gmail.com"  # Replace with your email
+    sender_password = 'stwf byvp tuhv lskz'
+    role = request.form['role']
+    # content = request.form['content']
+    print(f'200 {role}')
+    user_id = request.form['userid']
+    manager_email = request.form['managerEmail']
+    request_id = generate_request_id()
+    words_after_colon = re.findall(r':\s*(\w+)', role)
+    if 'role' in role.lower() or 'roles' in role.lower():
+        print(words_after_colon[0])
+        rg = 'role'
+        subject = f"Approval Request for {rg} access"
+        url=f'https://docs.google.com/forms/d/e/1FAIpQLScC4AvYbx9GIolMmjQQn62mfItYURw0mAZxUEyu4bWHN1ffNQ/viewform?usp=pp_url&entry.1728767546={user_id}&entry.1314294973={request_id}&entry.1971473862={words_after_colon[0]}&entry.1503672414={rg}'
+        body = f'''Hello,
+            User {user_id} is requesting access to the {words_after_colon[0]} {rg}.
+            The request ID for this approval is {request_id}.
+            Please review and provide your approval on the below link.
+            {url}
+
+            Sincerely,
+            Eliot Team'''
+        return mail(body,subject,sender_email,manager_email,sender_password)
+    elif 'gop' in role.lower() or 'gops' in role.lower() or 'portfolio' in role.lower() or 'portfolios' in role.lower():
+        print('gop')
+        print(words_after_colon[0],words_after_colon[1])
+        rg = 'gop'
+        profile=f'{rg}_{words_after_colon[1]}_Profile'
+        subject = f"Approval Request for {rg} access"
+        url=f'https://docs.google.com/forms/d/e/1FAIpQLScC4AvYbx9GIolMmjQQn62mfItYURw0mAZxUEyu4bWHN1ffNQ/viewform?usp=pp_url&entry.1728767546={user_id}&entry.1314294973={request_id}&entry.1971473862={words_after_colon[0]}&entry.1503672414={profile}'
+        body = f'''Hello,
+            User {user_id} is requesting access to the {words_after_colon[0]} {rg}.
+            The request ID for this approval is {request_id}.
+            Please review and provide your approval on the below link.
+            {url}
+
+            Sincerely,
+            Eliot Team'''
+        mail(body,subject,sender_email,manager_email,sender_password)
+        team_email = 'dhivesh18122000@gmail.com'
+        url2=f'https://docs.google.com/forms/d/e/1FAIpQLScerQ3eeCRDpKobU-jP4x6WsY2XCVUdLJe0YfZEp_wGAkry_A/viewform?usp=pp_url&entry.2116052852={user_id}&entry.1558582620={request_id}&entry.1060472253={words_after_colon[0]}&entry.288713975={words_after_colon[1]}'
+        subject = f"Approval Request for {rg} access"
+        body2 = f'''Hello,
+            Could you please provide approval to add {words_after_colon[0]} {rg} to {words_after_colon[1]} profile.
+            Please review and provide your approval on the below link.
+            {url2}
+            Sincerely,
+            Eliot Team'''
+        return mail(body2,subject,sender_email,team_email,sender_password)
 
 @app.route('/')
 def index():
@@ -442,24 +404,24 @@ def index():
 
 @app.route('/sql', methods=['POST'])
 def generate_response():
-    # Initialize the OpenAI client
-    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-
-    # Get user input and generate response
+    # Get user input from the request
     user_input = request.form.get('textMessage', '')
-    # Define keywords to identify SQL and technical questions
+    print(user_input)
     sql_keywords = ["SQL", "query", "database", "table", "column", "join"]
-    tech_keywords = ["code", "program", "python", "java", "function", "variable", "loop", "class", "object"]
+    if not any(keyword.lower() in user_input.lower() for keyword in sql_keywords):
+        return "I don't know"
+    
+    # If SQL-related, proceed with generating the query
+    prompt = f"""
+    Database Schema:
+    {schema_description}
 
-    # Check if input is SQL-related
-    if any(keyword.lower() in user_input.lower() for keyword in sql_keywords):
-        prompt = f"""
-        Database Schema:
-        {schema_description}
-
-        User Request: {user_input}
-        """
-        completion = client.chat.completions.create(
+    User Request: {user_input}
+    """
+    
+    try:
+        # Use the updated OpenAI API method for completions
+        completion = openai.chat.completions.create(
             model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are an expert in SQL."},
@@ -467,21 +429,9 @@ def generate_response():
             ]
         )
         return jsonify({'response_message': completion.choices[0].message.content.strip()})
-
-    # Check if input is a technical question
-    elif any(keyword.lower() in user_input.lower() for keyword in tech_keywords):
-        tech_prompt = f"Answer the following technical question:\n\n{user_input}"
-        completion = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": "You are an expert in technology and programming."},
-                {"role": "user", "content": tech_prompt}
-            ]
-        )
-        return jsonify({'response_message': completion.choices[0].message.content.strip()})
-    # If neither, return a default response
-    else:
-        return jsonify({'response_message': "I don't know"})
+    
+    except Exception as e:
+        return jsonify({'response_message': str(e)}), 500
 
 @app.route('/image_to_text', methods=['POST'])
 def extract_and_match():
@@ -563,14 +513,21 @@ def text_to_role():
     if 'role' in text_message.lower() or 'roles' in text_message.lower():
         q = f"Only return the role name from this response: {text_message}"
         matching = match_role(langchain_doc(q),roles_data)
-        response_message = f"Matching Role: {matching}"
-        print(response_message)
-
+        print(matching)
+        r = role_check(id,matching)
+        if r == 'No role access given for this user':
+            response_message = f"Matching Role: {matching}"
+            print(response_message)
+        else:
+            response_message = r
     elif 'portfolio' in text_message.lower() or 'portfolios' in text_message.lower() or 'gop' in text_message.lower() or 'gops' in text_message.lower():
-        q1 = f"Only return the portfolio name from this response: {text_message}"
+        print('ptf')
+        q1 = f"Extract and return only the `portfolio` name from this response: {text_message}. Do not include any other text or formatting."
         matching = find_gop_using_ptf(langchain_doc(q1), ptf_data)
         print(matching)
-        if matching != "Portfolio not active" and matching != "Not found":
+        r=gop_check(id,matching)
+        if matching != "Portfolio not active" and matching != "Not found" and r=='No gop access given for this user':
+            print('first print')
             profile_id=account(id)
             if len(profile_id)>1:
                 profile = f"{profile_id[1]}"
@@ -579,23 +536,32 @@ def text_to_role():
             else:
                 response_message= profile_id[0]
         else: 
-            q = f"Only return the gop name from this response: {text_message}"
+            print('gop')
+            q = f"Extract and return only the `gop` name from this response: {text_message}. Do not include any other text or formatting."
             matching = langchain_doc(q)
-            print(matching)
+            # q1 = f"Extract and return only the `portfolio` name from this response: {text_message}. Do not include any other text or formatting."
+            # matching_ptf = find_gop_using_ptf(langchain_doc(q), gop_data)
+            # print(matching_ptf)
             profile_id=account(id)
-            if len(profile_id)>1:
+            print(matching)
+            r=gop_check(id,matching)
+            if len(profile_id)>1 and r=='No gop access given for this user':
                 profile = f"{profile_id[1]}"
                 print(profile)
                 response_message = gop_perimeter_check(matching.strip(),profile)
             else:
                 response_message= profile_id[0]
+            # else:
+            #     response_message = matching_ptf
 
     elif 'counterpart' in text_message.lower():
         matching = counterpart(text_message, counterpart_data)
         response_message = f"Eliot Code is: {matching}"
+        
     else:
         response_message = f"{text_message}"
     print(response_message)
+
     return jsonify({
         "extracted_message": text_message,
         "response_message": response_message

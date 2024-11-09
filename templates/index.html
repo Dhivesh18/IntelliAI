@@ -139,15 +139,20 @@
         let currentConfirmationMessage = '';
         let userid = '';
         let role = '';
-
+        let role_gop = '';
         function addMessage(sender, message) {
-            const chatBox = document.getElementById('chat-box');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}`;
-            messageDiv.innerHTML = `<p>${sender === 'user' ? 'You: ' : 'Chatbot: '}${message}</p>`;
-            chatBox.appendChild(messageDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
+    const chatBox = document.getElementById('chat-box');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}`;
+
+    // Replace '\n' with <br> to render line breaks in HTML
+    message = message.replace(/\n/g, '<br>');
+
+    // messageDiv.innerHTML = `<p>${sender === 'user' ? 'You: ' : 'Chatbot: '}${message}</p>`;
+    messageDiv.innerHTML = `<p>${message}</p>`;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
 
         function submitEmail() {
             userid = document.getElementById('email-input').value.trim();
@@ -174,18 +179,18 @@
     }
 
     // Check if textMessage likely contains an SQL query
-    const isSQLQuery = textMessage.toLowerCase().includes("select") || 
-                       textMessage.toLowerCase().includes("insert") || 
-                       textMessage.toLowerCase().includes("update") || 
-                       textMessage.toLowerCase().includes("delete") || 
-                       textMessage.toLowerCase().includes("join");
+    
+    const isSQLQuery = textMessage.toLowerCase().includes("sql") || 
+           textMessage.toLowerCase().includes("query") ||
+           textMessage.toLowerCase().includes("extract");
+
 
     if (textMessage.trim() !== "") {
         addMessage('user', textMessage);
 
         // Choose the appropriate endpoint based on whether it's an SQL query
         const endpoint = isSQLQuery ? '/sql' : '/text';
-
+    
         fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -266,8 +271,9 @@
     .then(response => response.json())
     .then(data => {
         // Get the response message from the backend (role is already identified)
-        let role = data.response_message;
-        addMessage('bot', role)
+        // let role_gop = data.response_message;
+        role_gop = data.response_message;
+        addMessage('bot', role_gop)
         // Display the role-specific message from the backend
         if (data.response_message.includes("Matching GOP:") || data.response_message.includes('Matching Role:')){
             // addMessage('bot', role); 
@@ -319,7 +325,8 @@
                 body: new URLSearchParams({
                     'userid': userid,
                     'managerEmail': managerEmail
-                    ,'role': role
+                    ,'role': role_gop
+                    // ,'content':role_gop
                 })
             })
             .then(response => response.json())

@@ -13,12 +13,21 @@ def get_db_connection():
     return psycopg2.connect(**db_params)
 
 # create_table_query = """
-# CREATE TABLE IF NOT EXISTS requests (
-#     request_id VARCHAR(255) PRIMARY KEY,
-#     role_or_gop VARCHAR(255),
-#     user_email VARCHAR(255),
-#     manager_email VARCHAR(255),
-#     status VARCHAR(50)
+# CREATE TABLE IF NOT EXISTS Role (
+#     user_id VARCHAR(255),
+#     role VARCHAR(255),
+#     description VARCHAR(255)
+# );
+# """
+
+# create_table_query = """
+# CREATE TABLE IF NOT EXISTS Gop (
+#     user_id VARCHAR(255),
+#     profile VARCHAR(255),
+#     gop_name VARCHAR(255),
+#     perimeter VARCHAR(255),
+#     read VARCHAR(255),
+#     write VARCHAR(255)
 # );
 # """
 
