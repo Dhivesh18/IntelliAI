@@ -1,16 +1,17 @@
 from PyPDF2 import PdfReader
+from langchain.chains.conversation.memory import ConversationBufferMemory
+from langchain.chains import ConversationChain
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain.llms import OpenAI
 from flask import url_for
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, session
 import base64
 import requests
 import smtplib
 from email.mime.text import MIMEText
-# from openai import OpenAI
 import uuid
 import openai
 import json
@@ -26,12 +27,10 @@ file_path= '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/Info Doc/'
 
 # List of PDF files
 pdf_files = ['AMGEO.pdf','Eliot.pdf','Error.pdf','Ole_feeding.pdf','role_access.pdf', 'gop_access.pdf','XDS.pdf']
-# , 'Sample_schema.pdf']
-            #  ,'Table_schema_dict.pdf']  # Add more PDF paths as needed
 
 # Concatenate all the content from multiple PDFs
 raw_text = ''
-
+memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 # Loop through each PDF file
 
 for pdf_file in pdf_files:
@@ -53,17 +52,14 @@ text_splitter = CharacterTextSplitter(
 )
 texts = text_splitter.split_text(raw_text)
 
-# Download embeddings from OpenAI
 embeddings = OpenAIEmbeddings()
 
 document_search = FAISS.from_texts(texts, embeddings)
 
-# document_search
-
 chain = load_qa_chain(OpenAI(temperature = 0.2), chain_type="stuff")
 
 app = Flask(__name__)
-
+app.secret_key = key['SECRET_KEY']
 user = {
         'login':
          {
@@ -231,7 +227,7 @@ def account(id):
     if id in user['login']:
         if user['login'][id]['active'] == '1':
             profile = user['login'][id]['profile']
-            print(f'Profile {profile}')
+            # print(f'Profile {profile}')
             return ['Account is active' , profile]
         else:
             return ['Account is not active.']
@@ -331,8 +327,9 @@ def gop_check(id,gop):
     response = requests.get(api_url)
     if response.status_code == 200:
         user_gop = [req for req in response.json() if req.get('user_id') == id]
+        print(user_gop)
         for i in user_gop:
-            if i['gop']==gop:
+            if i['gop_name']==gop:
                 return 'User already have access to this gop'
         return 'No gop access given for this user'
     else:
@@ -404,34 +401,76 @@ def index():
 
 @app.route('/sql', methods=['POST'])
 def generate_response():
-    # Get user input from the request
     user_input = request.form.get('textMessage', '')
-    print(user_input)
-    sql_keywords = ["SQL", "query", "database", "table", "column", "join"]
-    if not any(keyword.lower() in user_input.lower() for keyword in sql_keywords):
-        return "I don't know"
-    
-    # If SQL-related, proceed with generating the query
-    prompt = f"""
-    Database Schema:
-    {schema_description}
+    # sql_keywords = ["SQL", "query", "database", "table", "column", "join"]
 
-    User Request: {user_input}
-    """
+    # Initial validation for SQL-related input
+    # if not any(keyword.lower() in user_input.lower() for keyword in sql_keywords):
+    #     return jsonify({'response_message': "I don't know. Please provide an SQL-related question."})
+    
+    # Initialize chat history if not present
+    if 'chat_history' not in session:
+        session['chat_history'] = [{"role": "system", "content": "You are an expert in SQL. Refer to the provided schema for all questions."}]
+    
+    # Add the schema once
+    schema_message = {"role": "system", "content": f"Database Schema: {schema_description}"}
+    if not any(msg['content'] == schema_message['content'] for msg in session['chat_history']):
+        session['chat_history'].insert(1, schema_message)
+    
+    # End chat if the user says "no"
+    if user_input.lower() == "no":
+        session.pop('chat_history', None)
+        return jsonify({'response_message': "You have switched to general queries."})
+    
+    # Add the user query to chat history
+    session['chat_history'].append({"role": "user", "content": user_input})
     
     try:
-        # Use the updated OpenAI API method for completions
+        # Call the model API
         completion = openai.chat.completions.create(
             model="gpt-4o-mini",
-            messages=[
-                {"role": "system", "content": "You are an expert in SQL."},
-                {"role": "user", "content": prompt}
-            ]
+            messages=session['chat_history']
         )
-        return jsonify({'response_message': completion.choices[0].message.content.strip()})
-    
+        assistant_response = completion.choices[0].message.content.strip()
+
+        # Add assistant response to history
+        session['chat_history'].append({"role": "assistant", "content": assistant_response})
+        return jsonify({'response_message': assistant_response})
+
     except Exception as e:
-        return jsonify({'response_message': str(e)}), 500
+        return jsonify({'response_message': f"Error: {str(e)}"}), 500
+
+
+# @app.route('/sql', methods=['POST'])
+# def generate_response():
+#     # Get user input from the request
+#     user_input = request.form.get('textMessage', '')
+#     print(user_input)
+#     sql_keywords = ["SQL", "query", "database", "table", "column", "join"]
+#     if not any(keyword.lower() in user_input.lower() for keyword in sql_keywords):
+#         return "I don't know"
+    
+#     # If SQL-related, proceed with generating the query
+#     prompt = f"""
+#     Database Schema:
+#     {schema_description}
+
+#     User Request: {user_input}
+#     """
+    
+#     try:
+#         # Use the updated OpenAI API method for completions
+#         completion = openai.chat.completions.create(
+#             model="gpt-4o-mini",
+#             messages=[
+#                 {"role": "system", "content": "You are an expert in SQL."},
+#                 {"role": "user", "content": prompt}
+#             ]
+#         )
+#         return jsonify({'response_message': completion.choices[0].message.content.strip()})
+    
+#     except Exception as e:
+#         return jsonify({'response_message': str(e)}), 500
 
 @app.route('/image_to_text', methods=['POST'])
 def extract_and_match():
@@ -525,7 +564,7 @@ def text_to_role():
         q1 = f"Extract and return only the `portfolio` name from this response: {text_message}. Do not include any other text or formatting."
         matching = find_gop_using_ptf(langchain_doc(q1), ptf_data)
         print(matching)
-        r=gop_check(id,matching)
+        r=gop_check(id,matching.strip())
         if matching != "Portfolio not active" and matching != "Not found" and r=='No gop access given for this user':
             print('first print')
             profile_id=account(id)
@@ -534,26 +573,27 @@ def text_to_role():
                 print(profile)
                 response_message = gop_perimeter_check(matching.strip(),profile)
             else:
-                response_message= profile_id[0]
+                if r!='No gop access given for this user':
+                    response_message = r
+                else:
+                    response_message= profile_id[0]
         else: 
             print('gop')
             q = f"Extract and return only the `gop` name from this response: {text_message}. Do not include any other text or formatting."
             matching = langchain_doc(q)
-            # q1 = f"Extract and return only the `portfolio` name from this response: {text_message}. Do not include any other text or formatting."
-            # matching_ptf = find_gop_using_ptf(langchain_doc(q), gop_data)
-            # print(matching_ptf)
             profile_id=account(id)
             print(matching)
-            r=gop_check(id,matching)
+            r=gop_check(id,matching.strip())
             if len(profile_id)>1 and r=='No gop access given for this user':
                 profile = f"{profile_id[1]}"
                 print(profile)
                 response_message = gop_perimeter_check(matching.strip(),profile)
             else:
-                response_message= profile_id[0]
-            # else:
-            #     response_message = matching_ptf
-
+                if r!='No gop access given for this user':
+                    response_message = r
+                else:
+                    response_message= profile_id[0]
+            
     elif 'counterpart' in text_message.lower():
         matching = counterpart(text_message, counterpart_data)
         response_message = f"Eliot Code is: {matching}"
