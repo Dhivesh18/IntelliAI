@@ -23,7 +23,7 @@ with open('/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/key.json') a
 
 os.environ["OPENAI_API_KEY"] = key['API_KEY']
 
-file_path= '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/Info Doc/'
+file_path= '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/Info_Doc/'
 
 # List of PDF files
 pdf_files = ['AMGEO.pdf','Eliot.pdf','Error.pdf','Ole_feeding.pdf','role_access.pdf', 'gop_access.pdf','XDS.pdf']
