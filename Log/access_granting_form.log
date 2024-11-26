@@ -1,0 +1,394 @@
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+{'user_id': 'suba', 'role': 'MAJ_FLOW_TSF_SHB', 'description': 'role'}
+<Response [200]>
+Request information stored successfully.
+Access is granted for role manager: fd293c8e-c6c2-49ae-8b65-b7284970e02e
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+          Timestamp_x  ... (Optional) Comment Box_y
+0  11/26/2024 1:12:31  ...                      NaN
+
+[1 rows x 14 columns]
+Yes, I approve. Yes, I approve.
+{'user_id': 'suba', 'profile': 'TS', 'gop_name': 'FX', 'perimeter': 'gop_TS_Profile', 'read': '1', 'write': '1'}
+{'user_id': 'suba', 'profile': 'TS', 'gop_name': 'FX', 'perimeter': 'gop_TS_Profile', 'read': '1', 'write': '1'}
+<Response [200]>
+Request information stored successfully.
+Access is granted for GOP: e82e0f29-f06d-4968-833f-80b45cb86cf8
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+{'user_id': 'suba', 'role': 'MAJ_FLOW_TSF_SHB', 'description': 'role'}
+<Response [200]>
+Request information stored successfully.
+Access is granted for role manager: 63d543eb-728d-4c3c-9c99-ffd4ea7052ab
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+          Timestamp_x  ... (Optional) Comment Box_y
+0  11/26/2024 1:45:23  ...                      NaN
+
+[1 rows x 14 columns]
+Yes, I approve. Yes, I approve.
+{'user_id': 'suba', 'profile': 'TS', 'gop_name': 'FX', 'perimeter': 'gop_TS_Profile', 'read': '1', 'write': '1'}
+{'user_id': 'suba', 'profile': 'TS', 'gop_name': 'FX', 'perimeter': 'gop_TS_Profile', 'read': '1', 'write': '1'}
+<Response [200]>
+Request information stored successfully.
+Access is granted for GOP: 5425a234-1e3a-480f-82b5-754ec7115a77
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []
+Empty DataFrame
+Columns: [Timestamp_x, Do you approve access to the User Specific Role/GOP?, (Optional) Comment Box_x, Ticket No, Role/Gop Name, Email Address, User Name_x, Description, Timestamp_y, User Name_y, GOP Name, Profile, Do you approve to add this gop in mentioned profile?, (Optional) Comment Box_y]
+Index: []

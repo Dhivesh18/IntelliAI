@@ -1,0 +1,1215 @@
+2024-11-26 01:31:01,124 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:31:02,516 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:31:03,231 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:31:03,232 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:31:03,642 - INFO - Logged out from Gmail.
+2024-11-26 01:31:03,642 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:31:03,642 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:31:04,993 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:31:05,690 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:31:05,690 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:31:05,996 - INFO - Logged out from Gmail.
+2024-11-26 01:31:05,997 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:32:00,515 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:32:02,065 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:32:02,788 - INFO - Found 1 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:32:03,296 - INFO - Processing email with subject: FILESYSTEM ALERT /120
+2024-11-26 01:32:03,705 - INFO - Cron job triggered successfully: /Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/script.sh
+2024-11-26 01:32:04,026 - INFO - Logged out from Gmail.
+2024-11-26 01:32:04,027 - INFO - 'FILESYSTEM' email processed and cron triggered.
+2024-11-26 01:32:04,027 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:32:05,389 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:32:06,187 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:32:06,188 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:32:06,515 - INFO - Logged out from Gmail.
+2024-11-26 01:32:06,515 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:33:00,773 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:33:02,158 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:33:02,792 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:33:02,793 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:33:03,090 - INFO - Logged out from Gmail.
+2024-11-26 01:33:03,091 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:33:03,091 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:33:04,306 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:33:04,989 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:33:04,990 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:33:05,283 - INFO - Logged out from Gmail.
+2024-11-26 01:33:05,283 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:34:00,545 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:34:01,696 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:34:02,640 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:34:02,640 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:34:02,936 - INFO - Logged out from Gmail.
+2024-11-26 01:34:02,936 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:34:02,937 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:34:04,280 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:34:05,098 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:34:05,098 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:34:05,431 - INFO - Logged out from Gmail.
+2024-11-26 01:34:05,432 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:35:00,820 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:35:02,444 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:35:03,077 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:35:03,078 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:35:03,467 - INFO - Logged out from Gmail.
+2024-11-26 01:35:03,468 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:35:03,468 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:35:04,902 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:35:05,553 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:35:05,553 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:35:05,926 - INFO - Logged out from Gmail.
+2024-11-26 01:35:05,926 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:36:01,264 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:36:02,759 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:36:03,474 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:36:03,475 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:36:03,787 - INFO - Logged out from Gmail.
+2024-11-26 01:36:03,787 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:36:03,788 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:36:04,990 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:36:05,654 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:36:05,654 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:36:06,035 - INFO - Logged out from Gmail.
+2024-11-26 01:36:06,035 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:37:00,320 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:37:01,679 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:37:02,513 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:37:02,514 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:37:02,805 - INFO - Logged out from Gmail.
+2024-11-26 01:37:02,805 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:37:02,806 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:37:03,804 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:37:04,414 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:37:04,414 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:37:04,701 - INFO - Logged out from Gmail.
+2024-11-26 01:37:04,701 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:38:01,055 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:38:02,568 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:38:03,294 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:38:03,294 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:38:03,592 - INFO - Logged out from Gmail.
+2024-11-26 01:38:03,593 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:38:03,593 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:38:04,640 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:38:05,331 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:38:05,331 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:38:05,688 - INFO - Logged out from Gmail.
+2024-11-26 01:38:05,689 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:39:00,965 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:39:02,473 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:39:03,118 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:39:03,119 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:39:03,413 - INFO - Logged out from Gmail.
+2024-11-26 01:39:03,414 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:39:03,414 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:39:04,723 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:39:05,441 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:39:05,441 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:39:05,748 - INFO - Logged out from Gmail.
+2024-11-26 01:39:05,749 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:40:01,007 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:40:02,480 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:40:03,073 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:40:03,074 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:40:03,400 - INFO - Logged out from Gmail.
+2024-11-26 01:40:03,400 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:40:03,400 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:40:04,784 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:40:05,580 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:40:05,580 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:40:06,165 - INFO - Logged out from Gmail.
+2024-11-26 01:40:06,166 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:41:00,489 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:41:01,871 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:41:02,498 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:41:02,498 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:41:02,787 - INFO - Logged out from Gmail.
+2024-11-26 01:41:02,789 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:41:02,789 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:41:04,121 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:41:04,840 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:41:04,840 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:41:05,148 - INFO - Logged out from Gmail.
+2024-11-26 01:41:05,148 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:42:00,467 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:42:01,833 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:42:02,495 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:42:02,496 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:42:02,793 - INFO - Logged out from Gmail.
+2024-11-26 01:42:02,794 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:42:02,794 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:42:04,234 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:42:04,901 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:42:04,901 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:42:05,257 - INFO - Logged out from Gmail.
+2024-11-26 01:42:05,258 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:43:00,528 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:43:01,989 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:43:02,705 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:43:02,705 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:43:02,998 - INFO - Logged out from Gmail.
+2024-11-26 01:43:02,998 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:43:02,998 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:43:04,272 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:43:05,060 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:43:05,061 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:43:05,390 - INFO - Logged out from Gmail.
+2024-11-26 01:43:05,391 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:44:00,633 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:44:01,800 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:44:02,577 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:44:02,578 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:44:02,919 - INFO - Logged out from Gmail.
+2024-11-26 01:44:02,920 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:44:02,920 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:44:04,229 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:44:04,964 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:44:04,964 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:44:05,272 - INFO - Logged out from Gmail.
+2024-11-26 01:44:05,272 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:45:00,568 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:45:01,896 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:45:02,530 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:45:02,530 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:45:02,835 - INFO - Logged out from Gmail.
+2024-11-26 01:45:02,835 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:45:02,835 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:45:03,890 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:45:04,562 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:45:04,563 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:45:04,870 - INFO - Logged out from Gmail.
+2024-11-26 01:45:04,870 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:46:01,176 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:46:02,249 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:46:02,882 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:46:02,882 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:46:03,173 - INFO - Logged out from Gmail.
+2024-11-26 01:46:03,174 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:46:03,174 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:46:04,393 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:46:05,081 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:46:05,081 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:46:05,390 - INFO - Logged out from Gmail.
+2024-11-26 01:46:05,390 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:47:00,759 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:47:02,146 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:47:02,828 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:47:02,828 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:47:03,144 - INFO - Logged out from Gmail.
+2024-11-26 01:47:03,144 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:47:03,144 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:47:04,474 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:47:05,293 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:47:05,293 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:47:05,601 - INFO - Logged out from Gmail.
+2024-11-26 01:47:05,601 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:48:00,885 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:48:02,128 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:48:02,854 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:48:02,855 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:48:03,146 - INFO - Logged out from Gmail.
+2024-11-26 01:48:03,147 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:48:03,147 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:48:04,586 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:48:05,301 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:48:05,301 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:48:05,609 - INFO - Logged out from Gmail.
+2024-11-26 01:48:05,609 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:49:00,883 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:49:02,132 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:49:02,850 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:49:02,850 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:49:03,152 - INFO - Logged out from Gmail.
+2024-11-26 01:49:03,153 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:49:03,153 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:49:04,220 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:49:04,898 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:49:04,898 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:49:05,206 - INFO - Logged out from Gmail.
+2024-11-26 01:49:05,206 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:50:00,569 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:50:02,038 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:50:02,674 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:50:02,675 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:50:02,966 - INFO - Logged out from Gmail.
+2024-11-26 01:50:02,966 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:50:02,967 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:50:04,290 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:50:05,110 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:50:05,110 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:50:05,521 - INFO - Logged out from Gmail.
+2024-11-26 01:50:05,521 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:51:00,842 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:51:02,250 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:51:03,060 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:51:03,060 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:51:03,481 - INFO - Logged out from Gmail.
+2024-11-26 01:51:03,481 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:51:03,481 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:51:04,811 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:51:05,629 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:51:05,629 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:51:06,040 - INFO - Logged out from Gmail.
+2024-11-26 01:51:06,041 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:52:00,354 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:52:01,746 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:52:02,476 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:52:02,476 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:52:02,774 - INFO - Logged out from Gmail.
+2024-11-26 01:52:02,774 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:52:02,775 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:52:04,100 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:52:04,921 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:52:04,921 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:52:05,228 - INFO - Logged out from Gmail.
+2024-11-26 01:52:05,228 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:53:00,500 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:53:01,645 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:53:02,468 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:53:02,468 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:53:02,776 - INFO - Logged out from Gmail.
+2024-11-26 01:53:02,776 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:53:02,776 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:53:04,107 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:53:04,925 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:53:04,926 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:53:05,336 - INFO - Logged out from Gmail.
+2024-11-26 01:53:05,337 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:54:00,620 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:54:02,135 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:54:02,796 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:54:02,796 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:54:03,094 - INFO - Logged out from Gmail.
+2024-11-26 01:54:03,094 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:54:03,094 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:54:04,421 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:54:05,242 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:54:05,243 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:54:05,651 - INFO - Logged out from Gmail.
+2024-11-26 01:54:05,651 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:55:00,963 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:55:02,484 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:55:03,122 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:55:03,122 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:55:03,507 - INFO - Logged out from Gmail.
+2024-11-26 01:55:03,508 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:55:03,508 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:55:04,757 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:55:05,454 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:55:05,454 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:55:05,759 - INFO - Logged out from Gmail.
+2024-11-26 01:55:05,759 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:56:01,034 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:56:02,413 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:56:03,106 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:56:03,106 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:56:03,393 - INFO - Logged out from Gmail.
+2024-11-26 01:56:03,394 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:56:03,394 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:56:04,538 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:56:05,254 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:56:05,255 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:56:05,664 - INFO - Logged out from Gmail.
+2024-11-26 01:56:05,665 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:57:01,032 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:57:02,596 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:57:03,521 - INFO - Found 1 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:57:04,022 - INFO - Processing email with subject: FILESYSTEM ALERT /120
+2024-11-26 01:57:04,486 - INFO - Cron job triggered successfully: /Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/script.sh
+2024-11-26 01:57:04,807 - INFO - Logged out from Gmail.
+2024-11-26 01:57:04,808 - INFO - 'FILESYSTEM' email processed and cron triggered.
+2024-11-26 01:57:04,808 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:57:06,127 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:57:07,004 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:57:07,005 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:57:07,413 - INFO - Logged out from Gmail.
+2024-11-26 01:57:07,414 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:58:00,636 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:58:02,300 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:58:03,028 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:58:03,029 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:58:03,396 - INFO - Logged out from Gmail.
+2024-11-26 01:58:03,397 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:58:03,397 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:58:04,757 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:58:05,473 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:58:05,473 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:58:05,883 - INFO - Logged out from Gmail.
+2024-11-26 01:58:05,884 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 01:59:01,195 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 01:59:02,496 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:59:03,165 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 01:59:03,165 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 01:59:03,459 - INFO - Logged out from Gmail.
+2024-11-26 01:59:03,459 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 01:59:03,460 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 01:59:04,474 - INFO - Authenticated successfully with Gmail.
+2024-11-26 01:59:05,094 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 01:59:05,095 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 01:59:05,387 - INFO - Logged out from Gmail.
+2024-11-26 01:59:05,388 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 02:00:00,794 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 02:00:01,975 - INFO - Authenticated successfully with Gmail.
+2024-11-26 02:00:02,677 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 02:00:02,677 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 02:00:03,077 - INFO - Logged out from Gmail.
+2024-11-26 02:00:03,078 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 02:00:03,078 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 02:00:04,457 - INFO - Authenticated successfully with Gmail.
+2024-11-26 02:00:05,167 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 02:00:05,167 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 02:00:05,465 - INFO - Logged out from Gmail.
+2024-11-26 02:00:05,466 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:33:01,083 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:33:02,566 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:33:03,253 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:33:03,254 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:33:03,547 - INFO - Logged out from Gmail.
+2024-11-26 14:33:03,548 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:33:03,548 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:33:04,816 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:33:05,475 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:33:05,476 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:33:05,779 - INFO - Logged out from Gmail.
+2024-11-26 14:33:05,780 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:34:00,742 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:34:02,055 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:34:02,682 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:34:02,682 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:34:02,975 - INFO - Logged out from Gmail.
+2024-11-26 14:34:02,976 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:34:02,976 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:34:04,220 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:34:04,963 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:34:04,963 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:34:05,256 - INFO - Logged out from Gmail.
+2024-11-26 14:34:05,256 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:35:00,699 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:35:02,267 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:35:02,941 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:35:02,941 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:35:03,273 - INFO - Logged out from Gmail.
+2024-11-26 14:35:03,273 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:35:03,273 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:35:04,611 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:35:05,242 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:35:05,242 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:35:05,556 - INFO - Logged out from Gmail.
+2024-11-26 14:35:05,557 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:36:00,968 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:36:02,627 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:36:03,388 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:36:03,389 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:36:03,737 - INFO - Logged out from Gmail.
+2024-11-26 14:36:03,738 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:36:03,738 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:36:05,285 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:36:05,922 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:36:05,922 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:36:06,272 - INFO - Logged out from Gmail.
+2024-11-26 14:36:06,273 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:37:00,693 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:37:01,777 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:37:02,586 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:37:02,587 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:37:02,970 - INFO - Logged out from Gmail.
+2024-11-26 14:37:02,970 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:37:02,970 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:37:04,268 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:37:05,050 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:37:05,050 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:37:05,362 - INFO - Logged out from Gmail.
+2024-11-26 14:37:05,363 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:38:00,778 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:38:01,905 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:38:02,586 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:38:02,586 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:38:03,105 - INFO - Logged out from Gmail.
+2024-11-26 14:38:03,106 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:38:03,106 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:38:04,255 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:38:04,914 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:38:04,915 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:38:05,313 - INFO - Logged out from Gmail.
+2024-11-26 14:38:05,314 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:39:01,042 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:39:03,933 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:39:05,713 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:39:05,714 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:39:06,310 - INFO - Logged out from Gmail.
+2024-11-26 14:39:06,310 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:39:06,310 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:39:07,447 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:39:08,543 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:39:08,543 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:39:09,034 - INFO - Logged out from Gmail.
+2024-11-26 14:39:09,035 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:40:00,417 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:40:02,337 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:40:04,016 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:40:04,016 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:40:04,308 - INFO - Logged out from Gmail.
+2024-11-26 14:40:04,309 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:40:04,309 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:40:05,557 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:40:06,181 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:40:06,182 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:40:06,526 - INFO - Logged out from Gmail.
+2024-11-26 14:40:06,527 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:41:00,858 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:41:02,224 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:41:02,853 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:41:02,853 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:41:03,162 - INFO - Logged out from Gmail.
+2024-11-26 14:41:03,163 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:41:03,163 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:41:04,404 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:41:05,032 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:41:05,032 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:41:05,324 - INFO - Logged out from Gmail.
+2024-11-26 14:41:05,324 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:42:00,652 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:42:02,187 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:42:03,560 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:42:03,561 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:42:03,854 - INFO - Logged out from Gmail.
+2024-11-26 14:42:03,854 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:42:03,855 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:42:05,110 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:42:05,796 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:42:05,796 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:42:06,150 - INFO - Logged out from Gmail.
+2024-11-26 14:42:06,151 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:43:00,489 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:43:01,638 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:43:02,308 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:43:02,308 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:43:02,599 - INFO - Logged out from Gmail.
+2024-11-26 14:43:02,599 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:43:02,599 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:43:04,042 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:43:04,775 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:43:04,775 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:43:05,092 - INFO - Logged out from Gmail.
+2024-11-26 14:43:05,093 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:44:00,493 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:44:01,733 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:44:02,387 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:44:02,388 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:44:02,671 - INFO - Logged out from Gmail.
+2024-11-26 14:44:02,672 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:44:02,672 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:44:04,039 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:44:04,682 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:44:04,683 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:44:04,979 - INFO - Logged out from Gmail.
+2024-11-26 14:44:04,979 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:45:01,342 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:45:02,375 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:45:02,991 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:45:02,992 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:45:03,351 - INFO - Logged out from Gmail.
+2024-11-26 14:45:03,352 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:45:03,352 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:45:04,695 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:45:05,312 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:45:05,312 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:45:05,600 - INFO - Logged out from Gmail.
+2024-11-26 14:45:05,600 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:46:00,952 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:46:02,315 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:46:02,968 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:46:02,968 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:46:03,274 - INFO - Logged out from Gmail.
+2024-11-26 14:46:03,274 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:46:03,274 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:46:04,543 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:46:05,175 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:46:05,176 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:46:05,504 - INFO - Logged out from Gmail.
+2024-11-26 14:46:05,504 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:47:00,865 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:47:02,062 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:47:02,743 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:47:02,743 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:47:03,045 - INFO - Logged out from Gmail.
+2024-11-26 14:47:03,046 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:47:03,046 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:47:04,344 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:47:04,981 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:47:04,981 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:47:05,310 - INFO - Logged out from Gmail.
+2024-11-26 14:47:05,310 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:48:00,597 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:48:01,887 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:48:02,505 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:48:02,507 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:48:02,792 - INFO - Logged out from Gmail.
+2024-11-26 14:48:02,792 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:48:02,793 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:48:04,282 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:48:04,982 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:48:04,982 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:48:05,274 - INFO - Logged out from Gmail.
+2024-11-26 14:48:05,274 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:49:00,513 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:49:01,870 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:49:02,511 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:49:02,511 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:49:02,805 - INFO - Logged out from Gmail.
+2024-11-26 14:49:02,806 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:49:02,806 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:49:04,030 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:49:04,658 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:49:04,658 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:49:04,951 - INFO - Logged out from Gmail.
+2024-11-26 14:49:04,951 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:50:00,499 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:50:01,693 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:50:02,345 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:50:02,345 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:50:02,644 - INFO - Logged out from Gmail.
+2024-11-26 14:50:02,645 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:50:02,645 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:50:04,140 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:50:04,790 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:50:04,791 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:50:05,089 - INFO - Logged out from Gmail.
+2024-11-26 14:50:05,089 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:51:00,646 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:51:01,736 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:51:02,354 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:51:02,354 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:51:02,647 - INFO - Logged out from Gmail.
+2024-11-26 14:51:02,647 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:51:02,648 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:51:03,847 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:51:04,442 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:51:04,443 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:51:04,727 - INFO - Logged out from Gmail.
+2024-11-26 14:51:04,728 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:52:00,978 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:52:02,127 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:52:02,763 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:52:02,764 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:52:03,050 - INFO - Logged out from Gmail.
+2024-11-26 14:52:03,051 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:52:03,051 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:52:04,049 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:52:04,652 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:52:04,653 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:52:04,936 - INFO - Logged out from Gmail.
+2024-11-26 14:52:04,936 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:53:00,693 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:53:02,034 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:53:02,673 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:53:02,674 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:53:02,967 - INFO - Logged out from Gmail.
+2024-11-26 14:53:02,967 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:53:02,967 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:53:04,191 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:53:04,838 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:53:04,838 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:53:05,131 - INFO - Logged out from Gmail.
+2024-11-26 14:53:05,131 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:54:00,405 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:54:01,663 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:54:02,270 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:54:02,271 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:54:02,555 - INFO - Logged out from Gmail.
+2024-11-26 14:54:02,555 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:54:02,556 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:54:03,743 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:54:04,340 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:54:04,341 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:54:04,631 - INFO - Logged out from Gmail.
+2024-11-26 14:54:04,631 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:55:00,964 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:55:02,274 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:55:02,904 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:55:02,904 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:55:03,197 - INFO - Logged out from Gmail.
+2024-11-26 14:55:03,197 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:55:03,197 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:55:04,509 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:55:05,294 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:55:05,295 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:55:05,615 - INFO - Logged out from Gmail.
+2024-11-26 14:55:05,616 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:56:01,088 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:56:02,443 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:56:03,057 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:56:03,058 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:56:03,341 - INFO - Logged out from Gmail.
+2024-11-26 14:56:03,341 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:56:03,342 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:56:04,548 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:56:05,148 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:56:05,148 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:56:05,432 - INFO - Logged out from Gmail.
+2024-11-26 14:56:05,433 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:57:00,775 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:57:03,794 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:57:04,685 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:57:04,686 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:57:05,081 - INFO - Logged out from Gmail.
+2024-11-26 14:57:05,081 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:57:05,081 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:57:06,175 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:57:06,828 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:57:06,829 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:57:07,555 - INFO - Logged out from Gmail.
+2024-11-26 14:57:07,556 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:58:00,983 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:58:02,062 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:58:02,721 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:58:02,722 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:58:03,007 - INFO - Logged out from Gmail.
+2024-11-26 14:58:03,008 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:58:03,008 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:58:04,206 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:58:04,890 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:58:04,890 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:58:05,179 - INFO - Logged out from Gmail.
+2024-11-26 14:58:05,179 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 14:59:00,554 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 14:59:01,670 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:59:02,294 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 14:59:02,294 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 14:59:02,588 - INFO - Logged out from Gmail.
+2024-11-26 14:59:02,588 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 14:59:02,589 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 14:59:03,850 - INFO - Authenticated successfully with Gmail.
+2024-11-26 14:59:04,524 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 14:59:04,525 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 14:59:04,815 - INFO - Logged out from Gmail.
+2024-11-26 14:59:04,816 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:00:01,218 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:00:02,501 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:00:03,125 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:00:03,125 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:00:03,492 - INFO - Logged out from Gmail.
+2024-11-26 15:00:03,493 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:00:03,493 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:00:04,665 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:00:05,304 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:00:05,304 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:00:05,625 - INFO - Logged out from Gmail.
+2024-11-26 15:00:05,626 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:01:01,018 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:01:02,293 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:01:02,891 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:01:02,892 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:01:03,179 - INFO - Logged out from Gmail.
+2024-11-26 15:01:03,180 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:01:03,180 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:01:04,377 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:01:04,973 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:01:04,973 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:01:05,255 - INFO - Logged out from Gmail.
+2024-11-26 15:01:05,255 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:02:00,687 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:02:01,988 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:02:02,604 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:02:02,604 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:02:02,894 - INFO - Logged out from Gmail.
+2024-11-26 15:02:02,895 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:02:02,895 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:02:04,675 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:02:05,277 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:02:05,277 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:02:05,560 - INFO - Logged out from Gmail.
+2024-11-26 15:02:05,560 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:03:00,939 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:03:02,336 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:03:03,071 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:03:03,071 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:03:03,366 - INFO - Logged out from Gmail.
+2024-11-26 15:03:03,366 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:03:03,367 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:03:04,367 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:03:04,998 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:03:04,998 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:03:05,282 - INFO - Logged out from Gmail.
+2024-11-26 15:03:05,283 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:04:00,637 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:04:02,060 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:04:02,762 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:04:02,762 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:04:03,064 - INFO - Logged out from Gmail.
+2024-11-26 15:04:03,064 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:04:03,065 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:04:04,410 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:04:05,075 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:04:05,076 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:04:05,387 - INFO - Logged out from Gmail.
+2024-11-26 15:04:05,387 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:05:00,741 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:05:02,059 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:05:02,676 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:05:02,677 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:05:02,984 - INFO - Logged out from Gmail.
+2024-11-26 15:05:02,985 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:05:02,985 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:05:04,207 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:05:04,823 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:05:04,824 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:05:05,118 - INFO - Logged out from Gmail.
+2024-11-26 15:05:05,119 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:06:00,555 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:06:01,920 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:06:02,524 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:06:02,525 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:06:02,818 - INFO - Logged out from Gmail.
+2024-11-26 15:06:02,818 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:06:02,819 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:06:03,896 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:06:04,521 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:06:04,522 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:06:04,852 - INFO - Logged out from Gmail.
+2024-11-26 15:06:04,853 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:07:01,166 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:07:02,492 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:07:03,119 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:07:03,120 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:07:03,413 - INFO - Logged out from Gmail.
+2024-11-26 15:07:03,414 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:07:03,414 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:07:04,599 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:07:05,192 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:07:05,193 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:07:05,475 - INFO - Logged out from Gmail.
+2024-11-26 15:07:05,476 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:08:00,804 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:08:02,079 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:08:02,704 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:08:02,704 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:08:02,994 - INFO - Logged out from Gmail.
+2024-11-26 15:08:02,995 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:08:02,995 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:08:04,068 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:08:04,696 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:08:04,697 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:08:04,984 - INFO - Logged out from Gmail.
+2024-11-26 15:08:04,984 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:09:01,018 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:09:02,162 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:09:02,771 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:09:02,772 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:09:03,060 - INFO - Logged out from Gmail.
+2024-11-26 15:09:03,060 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:09:03,061 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:09:04,364 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:09:04,990 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:09:04,990 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:09:05,280 - INFO - Logged out from Gmail.
+2024-11-26 15:09:05,280 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:10:00,626 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:10:01,869 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:10:02,492 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:10:02,492 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:10:03,009 - INFO - Logged out from Gmail.
+2024-11-26 15:10:03,009 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:10:03,010 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:10:04,416 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:10:05,153 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:10:05,154 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:10:05,622 - INFO - Logged out from Gmail.
+2024-11-26 15:10:05,622 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:11:00,971 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:11:02,482 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:11:04,149 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:11:04,149 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:11:05,022 - INFO - Logged out from Gmail.
+2024-11-26 15:11:05,022 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:11:05,023 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:11:09,030 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:11:10,487 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:11:10,488 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:11:10,840 - INFO - Logged out from Gmail.
+2024-11-26 15:11:10,841 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:12:01,246 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:12:02,850 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:12:03,569 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:12:03,569 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:12:03,966 - INFO - Logged out from Gmail.
+2024-11-26 15:12:03,967 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:12:03,967 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:12:05,952 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:12:07,189 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:12:07,189 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:12:07,492 - INFO - Logged out from Gmail.
+2024-11-26 15:12:07,493 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:13:00,893 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:13:02,021 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:13:02,639 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:13:02,639 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:13:02,957 - INFO - Logged out from Gmail.
+2024-11-26 15:13:02,957 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:13:02,957 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:13:04,519 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:13:05,599 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:13:05,600 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:13:05,913 - INFO - Logged out from Gmail.
+2024-11-26 15:13:05,914 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:14:01,289 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:14:02,568 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:14:03,188 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:14:03,188 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:14:03,487 - INFO - Logged out from Gmail.
+2024-11-26 15:14:03,488 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:14:03,488 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:14:04,839 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:14:05,571 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:14:05,571 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:14:05,874 - INFO - Logged out from Gmail.
+2024-11-26 15:14:05,874 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:15:01,247 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:15:02,527 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:15:03,349 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:15:03,350 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:15:03,951 - INFO - Logged out from Gmail.
+2024-11-26 15:15:03,952 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:15:03,952 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:15:05,228 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:15:05,844 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:15:05,845 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:15:06,145 - INFO - Logged out from Gmail.
+2024-11-26 15:15:06,145 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:16:00,439 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:16:01,724 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:16:02,339 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:16:02,340 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:16:02,694 - INFO - Logged out from Gmail.
+2024-11-26 15:16:02,695 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:16:02,695 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:16:03,891 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:16:04,495 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:16:04,495 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:16:04,784 - INFO - Logged out from Gmail.
+2024-11-26 15:16:04,785 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:17:01,074 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:17:02,404 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:17:03,038 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:17:03,038 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:17:03,332 - INFO - Logged out from Gmail.
+2024-11-26 15:17:03,333 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:17:03,333 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:17:04,367 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:17:04,953 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:17:04,953 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:17:05,233 - INFO - Logged out from Gmail.
+2024-11-26 15:17:05,234 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:18:00,551 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:18:01,910 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:18:02,521 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:18:02,521 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:18:02,809 - INFO - Logged out from Gmail.
+2024-11-26 15:18:02,810 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:18:02,810 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:18:03,895 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:18:04,540 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:18:04,540 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:18:04,838 - INFO - Logged out from Gmail.
+2024-11-26 15:18:04,838 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:19:01,158 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:19:02,519 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:19:03,187 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:19:03,187 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:19:03,479 - INFO - Logged out from Gmail.
+2024-11-26 15:19:03,480 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:19:03,480 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:19:04,732 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:19:05,409 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:19:05,410 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:19:05,701 - INFO - Logged out from Gmail.
+2024-11-26 15:19:05,702 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:20:00,998 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:20:02,686 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:20:03,379 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:20:03,380 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:20:03,667 - INFO - Logged out from Gmail.
+2024-11-26 15:20:03,668 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:20:03,668 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:20:04,970 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:20:05,594 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:20:05,594 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:20:05,901 - INFO - Logged out from Gmail.
+2024-11-26 15:20:05,901 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:21:01,176 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:21:02,266 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:21:02,871 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:21:02,871 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:21:03,158 - INFO - Logged out from Gmail.
+2024-11-26 15:21:03,159 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:21:03,159 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:21:04,258 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:21:04,896 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:21:04,896 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:21:05,197 - INFO - Logged out from Gmail.
+2024-11-26 15:21:05,197 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:22:00,525 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:22:01,949 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:22:02,572 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:22:02,572 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:22:02,862 - INFO - Logged out from Gmail.
+2024-11-26 15:22:02,863 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:22:02,863 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:22:04,152 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:22:04,777 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:22:04,777 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:22:05,068 - INFO - Logged out from Gmail.
+2024-11-26 15:22:05,069 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:23:00,398 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:23:01,591 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:23:02,245 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:23:02,246 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:23:02,544 - INFO - Logged out from Gmail.
+2024-11-26 15:23:02,544 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:23:02,544 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:23:03,723 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:23:04,321 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:23:04,322 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:23:04,607 - INFO - Logged out from Gmail.
+2024-11-26 15:23:04,608 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:24:00,970 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:24:02,250 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:24:02,860 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:24:02,860 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:24:03,143 - INFO - Logged out from Gmail.
+2024-11-26 15:24:03,144 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:24:03,144 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:24:04,422 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:24:05,069 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:24:05,070 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:24:05,372 - INFO - Logged out from Gmail.
+2024-11-26 15:24:05,372 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:25:00,659 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:25:01,833 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:25:02,440 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:25:02,441 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:25:02,724 - INFO - Logged out from Gmail.
+2024-11-26 15:25:02,724 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:25:02,724 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:25:03,969 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:25:04,590 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:25:04,590 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:25:04,922 - INFO - Logged out from Gmail.
+2024-11-26 15:25:04,923 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:26:01,306 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:26:02,642 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:26:03,324 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:26:03,324 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:26:03,616 - INFO - Logged out from Gmail.
+2024-11-26 15:26:03,617 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:26:03,617 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:26:04,832 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:26:05,443 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:26:05,444 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:26:05,726 - INFO - Logged out from Gmail.
+2024-11-26 15:26:05,726 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:27:01,147 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:27:02,441 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:27:03,062 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:27:03,062 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:27:03,354 - INFO - Logged out from Gmail.
+2024-11-26 15:27:03,355 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:27:03,355 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:27:04,558 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:27:05,415 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:27:05,415 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:27:05,705 - INFO - Logged out from Gmail.
+2024-11-26 15:27:05,705 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:28:01,038 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:28:02,507 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:28:03,333 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:28:03,334 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:28:03,631 - INFO - Logged out from Gmail.
+2024-11-26 15:28:03,634 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:28:03,634 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:28:04,720 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:28:05,329 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:28:05,330 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:28:05,616 - INFO - Logged out from Gmail.
+2024-11-26 15:28:05,617 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:29:01,026 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:29:02,216 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:29:02,825 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:29:02,825 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:29:03,130 - INFO - Logged out from Gmail.
+2024-11-26 15:29:03,130 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:29:03,131 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:29:04,354 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:29:04,953 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:29:04,953 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:29:05,235 - INFO - Logged out from Gmail.
+2024-11-26 15:29:05,236 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:30:00,722 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:30:02,238 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:30:02,841 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:30:02,842 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:30:03,121 - INFO - Logged out from Gmail.
+2024-11-26 15:30:03,122 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:30:03,122 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:30:04,434 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:30:05,057 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:30:05,057 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:30:05,354 - INFO - Logged out from Gmail.
+2024-11-26 15:30:05,355 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:31:00,696 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:31:02,038 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:31:02,766 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:31:02,766 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:31:03,062 - INFO - Logged out from Gmail.
+2024-11-26 15:31:03,063 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:31:03,063 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:31:04,368 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:31:05,002 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:31:05,003 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:31:05,312 - INFO - Logged out from Gmail.
+2024-11-26 15:31:05,313 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:32:00,464 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:32:01,880 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:32:02,501 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:32:02,501 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:32:02,798 - INFO - Logged out from Gmail.
+2024-11-26 15:32:02,798 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:32:02,799 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:32:04,004 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:32:04,616 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:32:04,617 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:32:04,905 - INFO - Logged out from Gmail.
+2024-11-26 15:32:04,906 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:33:01,214 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:33:02,504 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:33:03,095 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:33:03,096 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:33:03,378 - INFO - Logged out from Gmail.
+2024-11-26 15:33:03,379 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:33:03,379 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:33:04,636 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:33:05,255 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:33:05,255 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:33:05,544 - INFO - Logged out from Gmail.
+2024-11-26 15:33:05,545 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:34:00,886 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:34:02,183 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:34:02,823 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:34:02,824 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:34:03,114 - INFO - Logged out from Gmail.
+2024-11-26 15:34:03,114 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:34:03,114 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:34:04,384 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:34:05,039 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:34:05,039 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:34:05,332 - INFO - Logged out from Gmail.
+2024-11-26 15:34:05,332 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:35:00,672 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:35:02,070 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:35:02,691 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:35:02,691 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:35:02,984 - INFO - Logged out from Gmail.
+2024-11-26 15:35:02,984 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:35:02,985 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:35:04,010 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:35:04,743 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:35:04,743 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:35:05,024 - INFO - Logged out from Gmail.
+2024-11-26 15:35:05,025 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:36:00,296 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:36:01,608 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:36:02,233 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:36:02,234 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:36:02,525 - INFO - Logged out from Gmail.
+2024-11-26 15:36:02,526 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:36:02,526 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:36:03,732 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:36:04,346 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:36:04,346 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:36:04,639 - INFO - Logged out from Gmail.
+2024-11-26 15:36:04,639 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:37:00,980 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:37:02,338 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:37:03,057 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:37:03,058 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:37:03,388 - INFO - Logged out from Gmail.
+2024-11-26 15:37:03,389 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:37:03,389 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:37:04,709 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:37:05,332 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:37:05,333 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:37:05,622 - INFO - Logged out from Gmail.
+2024-11-26 15:37:05,622 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:38:01,138 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:38:02,314 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:38:02,941 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:38:02,941 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:38:03,226 - INFO - Logged out from Gmail.
+2024-11-26 15:38:03,227 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:38:03,227 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:38:04,420 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:38:05,058 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:38:05,059 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:38:05,358 - INFO - Logged out from Gmail.
+2024-11-26 15:38:05,359 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:39:00,785 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:39:01,895 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:39:02,524 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:39:02,524 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:39:02,842 - INFO - Logged out from Gmail.
+2024-11-26 15:39:02,843 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:39:02,843 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:39:04,091 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:39:04,769 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:39:04,769 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:39:05,083 - INFO - Logged out from Gmail.
+2024-11-26 15:39:05,083 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:40:00,500 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:40:01,983 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:40:02,597 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:40:02,597 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:40:02,878 - INFO - Logged out from Gmail.
+2024-11-26 15:40:02,879 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:40:02,879 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:40:03,903 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:40:04,541 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:40:04,542 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:40:04,835 - INFO - Logged out from Gmail.
+2024-11-26 15:40:04,835 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:41:01,253 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:41:02,545 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:41:03,149 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:41:03,150 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:41:03,431 - INFO - Logged out from Gmail.
+2024-11-26 15:41:03,431 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:41:03,431 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:41:04,631 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:41:05,241 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:41:05,241 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:41:05,533 - INFO - Logged out from Gmail.
+2024-11-26 15:41:05,534 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:42:00,898 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:42:02,191 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:42:02,810 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:42:02,811 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:42:03,095 - INFO - Logged out from Gmail.
+2024-11-26 15:42:03,095 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:42:03,096 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:42:04,306 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:42:04,915 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:42:04,916 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:42:05,203 - INFO - Logged out from Gmail.
+2024-11-26 15:42:05,204 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:43:00,450 - INFO - Starting 'FILESYSTEM' email check...
+2024-11-26 15:43:01,736 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:43:02,486 - INFO - Found 0 new emails with the subject 'FILESYSTEM'.
+2024-11-26 15:43:02,487 - INFO - No new 'FILESYSTEM' emails found.
+2024-11-26 15:43:02,774 - INFO - Logged out from Gmail.
+2024-11-26 15:43:02,774 - INFO - No 'FILESYSTEM' email found or processed.
+2024-11-26 15:43:02,775 - INFO - Starting 'AUTOSYS Job Failed' email check...
+2024-11-26 15:43:04,021 - INFO - Authenticated successfully with Gmail.
+2024-11-26 15:43:04,672 - INFO - Found 0 new emails with the subject 'AUTOSYS Job Failed'.
+2024-11-26 15:43:04,673 - INFO - No new 'AUTOSYS Job Failed' emails found.
+2024-11-26 15:43:04,984 - INFO - Logged out from Gmail.
+2024-11-26 15:43:04,985 - INFO - No 'AUTOSYS Job Failed' email found or processed.
+2024-11-26 15:44:00,293 - INFO - Starting 'FILESYSTEM' email check...
