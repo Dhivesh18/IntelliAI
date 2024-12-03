@@ -1,5 +1,5 @@
 —- This is the stored procedure for sending the trades/deals from Little Dragon to OLE. OLE is the Back office for Security trades/deals. Note that Trades and Deals mean the same.
-CREATE PROCEDURE goat
+CREATE PROCEDURE ole
     @date datetime = NULL,
     @deal int = NULL
 AS
@@ -93,7 +93,7 @@ BEGIN
     BEGIN CATCH
         SET @error = ERROR_NUMBER();
         SET @error_message = ERROR_MESSAGE();
-        RAISERROR('An error occurred in procedure GOAT. Error %d: %s', 16, 1, @error, @error_message);
+        RAISERROR('An error occurred in procedure OLE. Error %d: %s', 16, 1, @error, @error_message);
         RETURN @error;
     END CATCH
 END;
