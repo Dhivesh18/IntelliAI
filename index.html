@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliAI Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        to bottom,
+        #ee1337 50%,    /* Red top half */
+        #ffffff 50%,    /* White dividing line */
+        #000000 50%     /* Black bottom half */
+    );
+    color: #000000; /* Light text */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensures full height coverage */
+}
+
+
+.chat-container {
+    max-width: 1000px;
+    margin: 20px auto 0;  /* Adds margin at the top */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    background-color: #e0e0e0; /* Darker chat container */
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ffffff(0, 0, 0, 0.5);
+}
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* Subtle border */
+    border-radius: 8px;
+    background-color: #e0e0e0; /* Dark chat box background */
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+            margin-bottom: 10px;
+        }
+
+.message.bot {
+            text-align: left;
+        }
+
+.message.user {
+            text-align: right;
+        }
+
+.message.bot p, .message.user p {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.message.bot p {
+    background-color: #3e3e3e; /* Dark gray for bot messages */
+    color: #ffffff; /* White text for readability */
+}
+
+.message.user p {
+    background-color: #ee1337; /* Bright blue for user messages */
+    color: white; /* White text */
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#confirmation-input, #manager-email-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background-color: #2a2a2a; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+}
+#text-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #000000; /* Darker border for input */
+    background-color: #e0e0e0; /* Dark input background */
+    color: #000000; /* Light text color */
+    height: 15px; /* Increase height for better typing space */
+    font-size: 16px; /* Larger text size for better readability */
+    resize: none; /* Optional: Disables resizing (if you want it fixed) */
+}
+
+button {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+/*  */
+</style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+
+        <div id="email-section" class="section active">
+            <input type="email" id="email-input" placeholder="Your login id">
+            <button onclick="submitEmail()">Submit</button>
+        </div>
+
+        <div id="query-section" class="section">
+            <div class="input-group">
+                <textarea id="text-input" placeholder="Type your message here"></textarea>
+                <!-- <input type="text" id="text-input" placeholder="Type your message here"> -->
+                <button class="attachment-btn" onclick="document.getElementById('file-input').click()">
+                    <i class="fas fa-paperclip"></i>
+                </button>
+                <input type="file" id="file-input" style="display:none;">
+                <!-- <input type="file" id="file-input"> -->
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+
+        <div id="confirmation-section" class="section">
+            <div class="input-group">
+                <input type="text" id="confirmation-input" placeholder="Type 'yes' to confirm or 'no' to cancel">
+                <button id="confirm-button" onclick="confirmAction()">Confirm</button>
+            </div>
+        </div>      
+        <div id="manager-email-section" class="section">
+            <input type="email" id="manager-email-input" placeholder="Manager's email">
+            <button onclick="sendEmail()">Send Email</button>
+        </div>
+        <div id="more-requests-section" class="section">
+            <div class="input-group">
+                <input type="text" id="more-requests-input" placeholder="Type your request here">
+                <button id="check-more-requests-button" onclick="checkMoreRequests()">Submit</button>
+            </div>
+        </div>  
+    </div>
+
+    <script>
+        let currentConfirmationMessage = '';
+        let userid = '';
+        let role = '';
+        let role_gop = '';
+        function addMessage(sender, message) {
+    const chatBox = document.getElementById('chat-box');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}`;
+
+    // Replace '\n' with <br> to render line breaks in HTML
+    message = message.replace(/\n/g, '<br>');
+
+    // messageDiv.innerHTML = `<p>${sender === 'user' ? 'You: ' : 'Chatbot: '}${message}</p>`;
+    messageDiv.innerHTML = `<p>${message}</p>`;
+    chatBox.appendChild(messageDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+        function submitEmail() {
+            userid = document.getElementById('email-input').value.trim();
+            
+            if (userid === "") {
+                alert("Please enter your email address.");
+                return;
+            }
+
+            addMessage('user', 'User id: ' + userid);
+            document.getElementById('email-section').classList.remove('active');
+            document.getElementById('query-section').classList.add('active');
+            addMessage('bot', 'How can I assist you today?');
+        }
+        let isSQLContext = false; // Flag to track if the conversation is based on the SQL query
+        let isDebugQuery = false;
+function sendMessage() {
+    const textInput = document.getElementById('text-input');
+    const fileInput = document.getElementById('file-input');
+    const file = fileInput.files[0];
+    const textMessage = textInput.value;
+
+    if (textMessage.trim() === "" && !file) {
+        return;
+    }
+
+    // If the conversation is still in SQL context, only process via SQL endpoint
+    if (isSQLContext) {
+        processSQLQuery(textMessage);
+    } else if (isDebugQuery){
+        processdebug(textMessage);
+    }
+    else {
+        // Check for SQL-related queries
+        const isSQLQuery = textMessage.toLowerCase().includes("sql") || 
+                           textMessage.toLowerCase().includes("query") || 
+                           textMessage.toLowerCase().includes("extract");
+
+        if (textMessage.toLowerCase().includes("debug") || 
+            textMessage.toLowerCase().includes("analyze") || 
+            textMessage.toLowerCase().includes("analyse")) {
+            isDebugQuery = true;
+        }
+        if (textMessage.trim() !== "") {
+            addMessage('user', textMessage);
+
+            // Choose the appropriate endpoint
+            let endpoint = '/text'; // Default to text processing
+            if (isSQLQuery) {
+                endpoint = '/sql';
+            } else if (isDebugQuery) {
+                endpoint = '/debug_user_query';
+            }
+
+            fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ 'textMessage': textMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage('bot', data.response_message);
+                if (endpoint === '/sql') {
+                    addMessage('bot', 'Please provide any additional questions related to the SQL query or type "no" to switch to general queries.');
+                    isSQLContext = true; 
+                } else if (endpoint === '/debug_user_query') {
+                    addMessage('bot', 'Please provide any additional questions related to the SQL query or type "no" to switch to general queries.');
+                    isDebugQuery = true;
+                    // addMessage('bot', `Debug Mode is currently: ${isDebugQuery}`);
+                }
+                if (data.response_message.includes("No matching role found") || 
+                    data.response_message.includes("No Portfolio found") || 
+                    data.response_message.includes("Portfolio not active") || 
+                    data.response_message.includes("No matching gop found")) {
+                    addMessage('bot', 'Please check with Eliot support.');
+                } else if ((data.response_message.toLowerCase().includes("roles") || 
+                            data.response_message.toLowerCase().includes("role") || 
+                            data.response_message.toLowerCase().includes("gops") || 
+                            data.response_message.toLowerCase().includes("gop")) && 
+                           (data.response_message.toLowerCase().includes("approval") || 
+                            data.response_message.toLowerCase().includes("manager"))) {
+                    currentConfirmationMessage = data.response_message;
+                    role = data.response_message;
+                    document.getElementById('query-section').classList.remove('active');
+                    document.getElementById('confirmation-section').classList.add('active');
+                    addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
+                }
+            });
+
+            textInput.value = ''; 
+        }
+    }
+
+    if (file) {
+        addMessage('user', 'You attached an image.');
+        const formData = new FormData();
+        formData.append('image', file);
+
+        fetch('/image_to_text', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            addMessage('bot', data.response_message);
+            if (data.response_message.includes("No matching role found") || 
+                data.response_message.includes("No Portfolio found") || 
+                data.response_message.includes("Portfolio not active") || 
+                data.response_message.includes("No matching gop found")) {
+                addMessage('bot', 'Please check with Eliot support.');
+            } else if ((data.response_message.toLowerCase().includes("roles") || 
+                        data.response_message.toLowerCase().includes("role") || 
+                        data.response_message.toLowerCase().includes("gops") || 
+                        data.response_message.toLowerCase().includes("gop")) && 
+                       (data.response_message.toLowerCase().includes("approval") || 
+                        data.response_message.toLowerCase().includes("manager"))) {
+                currentConfirmationMessage = data.response_message;
+                role = data.response_message;
+                document.getElementById('query-section').classList.remove('active');
+                document.getElementById('confirmation-section').classList.add('active');
+                addMessage('bot', 'Do you want access? Please type "yes" to confirm or "no" to cancel.');
+            }
+        });
+
+        fileInput.value = ''; 
+    }
+}
+function processSQLQuery(textMessage) {
+    // Ensure that the textInput is properly accessed
+    const textInput = document.getElementById('text-input'); // Get text input element
+
+    // Make sure this function is only called when the context is SQL
+    if (textMessage.trim() !== "") {
+        addMessage('user', textMessage); // Add the user's message to the chat
+
+        fetch('/sql', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ 'textMessage': textMessage })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response and update the conversation context
+            if (textMessage.toLowerCase() === "no") {
+                isSQLContext = false; // Reset flag to stop SQL-specific queries
+                addMessage('bot', data.response_message);
+            } else {
+                addMessage('bot', data.response_message);
+                addMessage('bot', 'Any more questions related to the SQL query or type "no" to switch to general queries.');
+            }
+
+            // Clear the text input field after processing
+            textInput.value = ''; // Clear the text input field
+        })
+        .catch(error => {
+            // Handle errors if needed
+            console.error('Error:', error);
+        });
+    }
+}
+function processdebug(textMessage) {
+    // Get the text input element here
+    const textInput = document.getElementById('text-input'); // Ensure you're using the correct ID
+
+    if (textMessage.toLowerCase() === "no") {
+        isDebugQuery = false; // Reset flag
+        addMessage('bot', "Switching to general queries.");
+        textInput.value = ''; // Clear input field
+        return;
+    }
+
+    if (textMessage.trim() !== "") {
+        addMessage('user', textMessage);
+
+        fetch('/debug_user_query', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ 'textMessage': textMessage })
+        })
+        .then(response => response.json())
+        .then(data => {
+            addMessage('bot', data.response_message);
+            addMessage('bot', 'Any more questions related to debugging, or type "no" to switch to general queries.');
+            textInput.value = ''; // Clear input field after receiving the response
+        })
+        .catch(error => console.error('Error:', error));
+    }
+}
+
+        function confirmAction() {
+    const confirmationInput = document.getElementById('confirmation-input').value.trim().toLowerCase();
+    if (confirmationInput === 'yes') {
+    addMessage('user', 'Yes');
+    document.getElementById('confirmation-section').classList.remove('active');
+    
+    // Call the /text_to_role endpoint
+    fetch('/text_to_role', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({'userid': userid, 
+        'textMessage': currentConfirmationMessage })
+    })
+    .then(response => response.json())
+    .then(data => {
+        
+        role_gop = data.response_message;
+        addMessage('bot', role_gop)
+        // Display the role-specific message from the backend
+        if (data.response_message.includes("Matching GOP:") || data.response_message.includes('Matching Role:')){
+            
+                document.getElementById('manager-email-section').classList.add('active');
+                addMessage('bot', 'Please enter your manager\'s email id:');
+        }
+        else{
+        document.getElementById('confirmation-section').classList.remove('active');
+        document.getElementById('query-section').classList.add('active');
+        document.getElementById('confirmation-input').value = '';
+    }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        addMessage('bot', 'There was an error processing your request. Please try again later.');
+        document.getElementById('confirmation-section').classList.remove('active');
+        document.getElementById('query-section').classList.add('active');
+        document.getElementById('confirmation-input').value = '';
+    });
+
+} else if (confirmationInput === 'no') {
+    addMessage('user', 'No');
+    addMessage('bot', 'Action canceled.');
+
+    // Deactivate all other sections and reactivate the query section
+    document.getElementById('confirmation-section').classList.remove('active');
+    document.getElementById('query-section').classList.add('active');
+
+    // Clear input fields
+    document.getElementById('confirmation-input').value = '';
+} else {
+    addMessage('bot', 'Invalid response. Please type "yes" to confirm or "no" to cancel.');
+}
+
+        }
+
+        function sendEmail() {
+            const managerEmail = document.getElementById('manager-email-input').value.trim();
+            if (!managerEmail) {
+                alert('Please enter your manager\'s email.');
+                return;
+            }
+
+            addMessage('user', 'Manager\'s email: ' + managerEmail);
+            fetch('/send_email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({
+                    'userid': userid,
+                    'managerEmail': managerEmail
+                    ,'role': role_gop
+                    // ,'content':role_gop
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage('bot', 'Email sent successfully.');
+                resetQueryForNextInteraction();
+            });
+        }
+
+        function resetQueryForNextInteraction() {
+            // Reset fields and activate query section for the next request
+            document.getElementById('confirmation-input').value = '';
+            document.getElementById('manager-email-input').value = '';
+            
+            document.getElementById('manager-email-section').classList.remove('active');
+            document.getElementById('query-section').classList.add('active');
+        }
+
+        function checkMoreRequests() {
+            const moreRequestInput = document.getElementById('more-requests-input').value.trim();
+            if (moreRequestInput) {
+                addMessage('user', moreRequestInput);
+                sendMessage();
+            }
+        }
+        document.getElementById('text-input').addEventListener('input', function () {
+    this.style.height = 'auto'; // Reset height to auto to shrink
+    this.style.height = (this.scrollHeight) + 'px'; // Set height to scrollHeight for expansion
+});
+    </script>
+</body>
+</html>
