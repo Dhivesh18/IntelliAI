@@ -1,4 +1,4 @@
-—- This is the stored procedure for sending the trades/deals from Little Dragon to OLE. OLE is the Back office for Security trades/deals. Note that Trades and Deals mean the same.
+-- This is the stored procedure for sending the trades/deals from Little Dragon to OLE. OLE is the Back office for Security trades/deals. Note that Trades and Deals mean the same.
 CREATE PROCEDURE ole
     @date datetime = NULL,
     @deal int = NULL
