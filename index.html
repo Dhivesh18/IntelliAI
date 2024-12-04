@@ -140,7 +140,6 @@ button:hover {
                     <i class="fas fa-paperclip"></i>
                 </button>
                 <input type="file" id="file-input" style="display:none;">
-                <!-- <input type="file" id="file-input"> -->
                 <button onclick="sendMessage()">Send</button>
             </div>
         </div>
@@ -175,8 +174,6 @@ button:hover {
 
     // Replace '\n' with <br> to render line breaks in HTML
     message = message.replace(/\n/g, '<br>');
-
-    // messageDiv.innerHTML = `<p>${sender === 'user' ? 'You: ' : 'Chatbot: '}${message}</p>`;
     messageDiv.innerHTML = `<p>${message}</p>`;
     chatBox.appendChild(messageDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
@@ -249,7 +246,6 @@ function sendMessage() {
                 } else if (endpoint === '/debug_user_query') {
                     addMessage('bot', 'Please provide any additional questions related to the SQL query or type "no" to switch to general queries.');
                     isDebugQuery = true;
-                    // addMessage('bot', `Debug Mode is currently: ${isDebugQuery}`);
                 }
                 if (data.response_message.includes("No matching role found") || 
                     data.response_message.includes("No Portfolio found") || 
@@ -341,17 +337,36 @@ function processSQLQuery(textMessage) {
         });
     }
 }
+
 function processdebug(textMessage) {
     // Get the text input element here
     const textInput = document.getElementById('text-input'); // Ensure you're using the correct ID
 
+    // Check if the user is switching to general queries
     if (textMessage.toLowerCase() === "no") {
-        isDebugQuery = false; // Reset flag
+        isDebugQuery = false; // Reset the flag to indicate that we're no longer in debug mode
         addMessage('bot', "Switching to general queries.");
+
+        // Clear input field and chat history
         textInput.value = ''; // Clear input field
-        return;
+
+        // Call the /debug endpoint and clear the chat history
+        fetch('/debug_user_query', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams({ 'textMessage': textMessage })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the server's response, for example, you could confirm the chat history is cleared
+            console.log('Chat history cleared:', data);
+        })
+        .catch(error => console.error('Error:', error));
+
+        return; // Exit the function after processing "no"
     }
 
+    // If the message is not "no", process the debug query
     if (textMessage.trim() !== "") {
         addMessage('user', textMessage);
 
