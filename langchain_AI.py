@@ -1,117 +1,138 @@
-from langchain_community.document_loaders import PyPDFLoader
-from langchain.schema import Document
-from langchain_community.embeddings import OpenAIEmbeddings
-from langchain.chains import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
-from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain_community.vectorstores import FAISS
-from langchain.chat_models import ChatOpenAI
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
-from langchain.memory import ConversationBufferMemory
-from flask import Flask, request, jsonify, render_template, session
-import base64
-import requests
-import smtplib
-from email.mime.text import MIMEText
-import uuid
-import json
-import re
-import os
+# Import necessary modules from LangChain and other libraries
+from langchain_community.document_loaders import PyPDFLoader  # For loading PDFs
+from langchain.schema import Document  # To work with Document schema in LangChain
+from langchain_community.embeddings import OpenAIEmbeddings  # For embedding text with OpenAI
+from langchain.chains import create_retrieval_chain  # For creating a retrieval chain from documents
+from langchain.chains.combine_documents import create_stuff_documents_chain  # Combine document chains
+from langchain_core.prompts import ChatPromptTemplate  # For creating prompt templates for chats
+from langchain.chains import LLMChain  # For chaining LLMs with LangChain
+from langchain.prompts import PromptTemplate  # For defining prompt templates
+from langchain_community.vectorstores import FAISS  # FAISS for vector storage
+from langchain.chat_models import ChatOpenAI  # OpenAI Chat model integration
+from langchain.text_splitter import RecursiveCharacterTextSplitter  # For splitting long text into smaller chunks
+from langchain.vectorstores import FAISS  # Import FAISS again for vector storage
+from langchain.memory import ConversationBufferMemory  # For memory during conversations
+from flask import Flask, request, jsonify, render_template, session  # Flask for web app
+import base64  # For encoding/decoding data
+import requests  # For making HTTP requests
+import smtplib  # For sending emails
+from email.mime.text import MIMEText  # For creating email content
+import uuid  # For generating unique IDs
+import json  # For handling JSON data
+import re  # For regex operations
+import os  # For handling file paths and environment variables
 
+# Load the API key and other sensitive data from a local JSON file
 with open('/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/key.json') as f:
-    key=json.load(f)
+    key = json.load(f)  # Load the JSON data from the file
 
+# Set OpenAI API key from the loaded key data
 os.environ["OPENAI_API_KEY"] = key['API_KEY']
-OWNER = key['OWNER']
-REPO = key['REPO']
-GITHUB_TOKEN = key['GITHUB_TOKEN']
+OWNER = key['OWNER']  # GitHub repository owner
+REPO = key['REPO']  # GitHub repository name
+GITHUB_TOKEN = key['GITHUB_TOKEN']  # GitHub token for API access
 
-file_path= '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/Info_Doc/'
+# Define the file path where PDF files are stored
+file_path = '/Users/dhiveshakilan/Learning/Python/AI/IntelliAISupport/Info_Doc/'
 
-# List of PDF files
-pdf_files = ['AMGEO.pdf','role_access.pdf','gop_access.pdf','XDS.pdf']
+# List of PDF files to be loaded and processed
+pdf_files = ['AMGEO.pdf', 'role_access.pdf', 'gop_access.pdf', 'XDS.pdf']
 
-# Initialize a list to store documents
+# Initialize a list to store document objects
 docs = []
 
-# Use PyPDFLoader to load each PDF
+# Load each PDF and convert the pages into document objects
 for pdf_file in pdf_files:
-    pdf = file_path + pdf_file
+    pdf = file_path + pdf_file  # Full path to the PDF file
     
     # Load the PDF using PyPDFLoader
     loader = PyPDFLoader(pdf)
     
-    # Extract text from the PDF pages
+    # Extract pages from the PDF
     pages = loader.load()
 
-    # Convert pages to Document objects (if not already in that format)
+    # Convert each page into a Document object and append to the docs list
     for page in pages:
-        document = Document(page_content=page.page_content)  # Create a document object
+        document = Document(page_content=page.page_content)  # Create a Document object
         docs.append(document)
 
-# We need to split the text using Character Text Split such that it sshould not increse token size
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)
-documents=text_splitter.split_documents(docs)
+# Split the loaded documents into smaller chunks to avoid exceeding token limits for LLMs
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20)  # Specify chunk size and overlap
+documents = text_splitter.split_documents(docs)  # Split documents
 
-db=FAISS.from_documents(documents[:30],OpenAIEmbeddings())
+# Initialize the FAISS vector store with OpenAI embeddings for document retrieval
+db = FAISS.from_documents(documents[:30], OpenAIEmbeddings())  # Use the first 30 documents for the vector store
 
+# Initialize the OpenAI Chat model (GPT-4 Mini) with a low temperature for less random responses
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
-# Initialize ConversationBufferMemory
+
+# Set up memory for the conversation (e.g., to maintain context during a chat)
 memory = ConversationBufferMemory(memory_key="chat_history")
 
+# Initialize the Flask web app
 app = Flask(__name__)
-app.secret_key = key['SECRET_KEY']
+app.secret_key = key['SECRET_KEY']  # Set a secret key for session management
 
-
+# Function to get account details for a given user ID
 def account(id):
+    # Define the API endpoint to fetch account details
     api_url = 'http://127.0.0.1:8080/getaccount'
+    # Send a GET request with the user ID as a parameter
     response = requests.get(api_url, params={'id': id})
+    
+    # Check if the response is successful (status code 200)
     if response.status_code == 200:
-        user_account=response.json()
-        if user_account[0]['active']== True:
-            profile = user_account[0]['profile']
-            # print(f'Profile {profile}')
-            return ['Account is active' , profile]
-        # elif user_account['active']== '1':
-        #     return ['Account is not active.']
+        user_account = response.json()  # Parse the JSON response
+        
+        # Check if the account is active
+        if user_account[0]['active'] == True:
+            profile = user_account[0]['profile']  # Get the profile of the active account
+            return ['Account is active', profile]
         else:
             return ['Account is not active.']
-            # return ['No user id found.']
     else:
         print("Failed to fetch data. Status code:", response.status_code)
 
-def ptf_perimeter_check(ptf,profile):
+# Function to check the GOP perimeter for a given PTF and profile
+def ptf_perimeter_check(ptf, profile):
     api_url_get_gop_using_ptf = 'http://127.0.0.1:8080/get_gop_using_ptf'
+    
+    # Send a GET request to fetch the GOP using the provided PTF
     get_gop_using_ptf_response = requests.get(api_url_get_gop_using_ptf, params={'ptf': ptf})
+    
     if get_gop_using_ptf_response.status_code == 200:
         get_gop_using_ptf = get_gop_using_ptf_response.json()
         gop = get_gop_using_ptf[0]
-        return gop_perimeter_check(gop,profile)
+        return gop_perimeter_check(gop, profile)  # Call another function to check GOP perimeter
     else:
         print("Failed to fetch data. Status code:", get_gop_using_ptf_response.status_code)
 
+# Function to check the GOP access and perimeter details
 def gop_perimeter_check(gop, profile):
     api_url_gop_perimeter = 'http://127.0.0.1:8080/gop_check_in_perimeter'
     api_url_gop_data = 'http://127.0.0.1:8080/gop_data'
+    
+    # Check if the GOP is in the specified perimeter
     gop_check_in_perimeter_response = requests.get(api_url_gop_perimeter, params={'profile': profile})
     gop_data_response = requests.get(api_url_gop_data, params={'gop': gop})
 
+    # If the request is successful
     if gop_check_in_perimeter_response.status_code == 200:
         gop_check_in_perimeter = gop_check_in_perimeter_response.json() 
+        # Check if GOP exists in perimeter
         if gop in gop_check_in_perimeter:
-                return f'{gop} GOP access is already present for profile {profile}.'
+            return f'{gop} GOP access is already present for profile {profile}.'
         else:
+            # Fetch perimeter and status details if not found in perimeter
             api_url_gop_perimeter = 'http://127.0.0.1:8080/gop_perimeter'    
             gop_perimeter_response = requests.get(api_url_gop_perimeter, params={'profile': profile})
             if gop_perimeter_response.status_code == 200 and gop_data_response.status_code == 200:
-                gop_perimeter= gop_perimeter_response.json()
+                gop_perimeter = gop_perimeter_response.json()
                 gop_data = gop_data_response.json()
                 gop_profile = gop_data[0]['perimeter']
                 act_flg = gop_data[0]['status']
                 
+                # Check if the user has access to the perimeter and the status of the GOP
                 if gop_profile in gop_perimeter:
                     if act_flg == 'Active':
                         return f'Matching GOP: {gop} is available for profile: {profile}.'
@@ -124,13 +145,14 @@ def gop_perimeter_check(gop, profile):
     else:
         print("Failed to fetch data. Status code:", gop_check_in_perimeter_response.status_code)
 
-# Function to encode the image
+# Function to encode an image to base64 format
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
+# LangChain document-based query function
 def langchain_doc(query):
-    ## Design ChatPrompt Template
+    # Design ChatPrompt Template for LangChain
     prompt = ChatPromptTemplate.from_template("""
     Answer the following question based only on the provided context. 
     Think step by step before providing a detailed answer. 
@@ -139,91 +161,112 @@ def langchain_doc(query):
     </context>
     Question: {input}""")
 
-    ## Chain Introduction
-    ## Create Stuff Docment Chainy)
-    document_chain=create_stuff_documents_chain(llm,prompt)
-    retriever=db.as_retriever()
-    retrieval_chain=create_retrieval_chain(retriever,document_chain)
-    response=retrieval_chain.invoke({"input":query})
-    print('langchain',response['answer'])
+    # Create Stuff Document Chain to handle document-based queries
+    document_chain = create_stuff_documents_chain(llm, prompt)
+    
+    # Set up a retriever for the FAISS vector store
+    retriever = db.as_retriever()
+    
+    # Create the retrieval chain
+    retrieval_chain = create_retrieval_chain(retriever, document_chain)
+    
+    # Execute the retrieval chain with the input query
+    response = retrieval_chain.invoke({"input": query})
+    print('langchain', response['answer'])
     return response['answer']
 
-# Function to match user query with role keywords using partial matching
+# Function to match a role with role keywords using partial matching
 def match_role(role):
+    # Fetch matching roles from the API
     api_url_get_matching_role = 'http://127.0.0.1:8080/get_matching_role'
     get_matching_role_response = requests.get(api_url_get_matching_role)
-    print(role,get_matching_role_response)
+    # Check if the role is found in the list of matching roles
     if role.strip() in get_matching_role_response.json():
         return role.strip()
     return "No matching role found. - No description available"
 
+# Function to find GOP associated with a PTF
 def find_gop_using_ptf(ptf):
-    found_gop=None
+    found_gop = None
+    # Fetch PTF data from the API
     api_url_get_ptf = 'http://127.0.0.1:8080/get_ptf'
     get_ptf_response = requests.get(api_url_get_ptf, params={'ptf': ptf})
 
     if get_ptf_response.status_code == 200:
-        print(get_ptf_response.json())
         get_ptf = get_ptf_response.json()
-        if get_ptf[0]== "Active":
+        # Check if the PTF is active or not
+        if get_ptf[0] == "Active":
             found_gop = ptf
-        elif get_ptf[0]== "Not Active":
+        elif get_ptf[0] == "Not Active":
             found_gop = "Portfolio not active"
+    
     return found_gop if found_gop is not None else "Not found"
 
-def mail(body,subject,sender_email,manager_email,sender_password):
-    msg = MIMEText(body)
-    msg['Subject'] = subject
-    msg['From'] = sender_email
-    msg['To'] = manager_email
+# Function to send an email (e.g., for approval notifications)
+def mail(body, subject, sender_email, manager_email, sender_password):
+    msg = MIMEText(body)  # Create MIMEText email message
+    msg['Subject'] = subject  # Set email subject
+    msg['From'] = sender_email  # Set sender email
+    msg['To'] = manager_email  # Set recipient email
 
     try:
+        # Establish SMTP connection and send the email
         with smtplib.SMTP('smtp.gmail.com', 587) as server:
-            server.starttls()
-            server.login(sender_email, sender_password)
-            server.send_message(msg)
+            server.starttls()  # Start TLS encryption
+            server.login(sender_email, sender_password)  # Login to the email server
+            server.send_message(msg)  # Send the message
         return jsonify({'status': 'success', 'message': 'Approval email sent successfully.'})
-
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
     
+# Function to generate a unique request ID
 def generate_request_id():
     return str(uuid.uuid4())
 
-def role_check(id,role):
+# Function to check if a user already has a specific role
+def role_check(id, role):
     api_url = 'http://127.0.0.1:8080/getrole'
     response = requests.get(api_url)
+    
     if response.status_code == 200:
         user_role = [req for req in response.json() if req.get('user_id') == id]
+        # Check if the user already has the specified role
         for i in user_role:
-            if i['role']==role:
-                return 'User already have access to this Role'
+            if i['role'] == role:
+                return 'User already has access to this Role'
         return 'No role access given for this user'
     else:
         print(f"Failed to fetch requests: {response.status_code}")
         return []
 
-def gop_check(id,gop):
+# Function to check if a user has access to a specific GOP
+def gop_check(id, gop):
     api_url = 'http://127.0.0.1:8080/getgop'
     response = requests.get(api_url)
+    
     if response.status_code == 200:
         user_gop = [req for req in response.json() if req.get('user_id') == id]
-        print(user_gop)
+        # Check if the user already has the specified GOP access
         for i in user_gop:
-            if i['gop_name']==gop:
-                return 'User already have access to this gop'
-        return 'No gop access given for this user'
+            if i['gop_name'] == gop:
+                return 'User already has access to this GOP'
+        return 'No GOP access given for this user'
     else:
         print(f"Failed to fetch requests: {response.status_code}")
         return []
-    
+
 # Define custom prompt template for SQL generation
 sql_prompt_template = """
 Given the following database schema: {schema_description},
 Generate a SQL query to answer the following question:
 {question}
 Please ensure the query is correct and formatted properly.
-Use previous responses to refine the query if needed: {previous_sql_query}
+Use previous responses to refine the query if needed: 
+Previous User Message: 
+{previous_user_message}
+
+Previous Assistant Response: 
+{previous_llm_response}
 """
 
 # Function to create an SQL query chain with memory
@@ -311,41 +354,47 @@ def github(PATTERN):
     # Send the GET request to fetch the repository contents
     response = requests.get(repo_url, headers={'Authorization': f'token {GITHUB_TOKEN}'})
 
+    # Check if the connection to GitHub was successful
     if response.status_code == 200:
-        print(f"Connection GITHUB successful!, {PATTERN}")
-        repo_contents = response.json()
+        print(f"Connection to GITHUB successful!, {PATTERN}")
+        repo_contents = response.json()  # Parse the response as JSON to get the repository contents
         
         # Iterate over the contents and print files that match the pattern
         for content in repo_contents:
-            if content['name'].startswith(PATTERN):  # Match files that start with 'OLE'
+            # Check if the file name starts with the specified pattern
+            if content['name'].startswith(PATTERN):  # Match files that start with the specified pattern (e.g., 'OLE')
                 print(f"Match found: {content['name']}")
                 
                 # Get the content of the matched file
                 file_url = content['url']  # URL to get the file details
                 file_response = requests.get(file_url, headers={'Authorization': f'token {GITHUB_TOKEN}'})
                 
+                # Check if the file content was successfully fetched
                 if file_response.status_code == 200:
-                    file_data = file_response.json()
+                    file_data = file_response.json()  # Parse the response as JSON
                     
-                    # The file content is base64 encoded
-                    encoded_content = file_data['content']
+                    # The file content is base64 encoded, so decode it
+                    encoded_content = file_data['content']  # Get the base64 encoded content
                     decoded_content = base64.b64decode(encoded_content).decode('utf-8')  # Decode the content
-                    return decoded_content
+                    return decoded_content  # Return the decoded content
                 else:
+                    # If unable to fetch the file content, return the error message with the status code
                     return f"Failed to fetch the content of {content['name']}. Status code: {file_response.status_code}"
     else:
+        # If unable to connect to the GitHub repository, return the error message with the status code
         return f"Failed to connect to the repository. Status code: {response.status_code}"
-    return 'No file found'
+    
+    return 'No file found'  # Return message if no matching file is found
 
-# /debug_user_query - Debug the stored proc based on the user request
 @app.route('/debug_user_query', methods=['POST'])
 def debug_user_query():
     text_response = request.form.get('textMessage', '')
     print(text_response)
 
-    # # End chat if the user says "no"
+    # End chat if the user says "no"
     if text_response.lower() == "no":
         session.pop('chat_history', None)
+        print(session)
         return jsonify({'response_message': "You have switched to general queries."})
 
     deal_prompt = f'Give me only the deal id from this response (only number) - {text_response}'
@@ -353,101 +402,115 @@ def debug_user_query():
     sql_file = llm.predict(sql_file_response)
     stored_proc = github(sql_file)
     print(stored_proc)
+
+    deal_id = llm.predict(deal_prompt)
+    try:
+        deal_id = int(deal_id)
+    except ValueError:
+        deal_id = None
+
+    # Condition 1: No file found & no previous chat history
+    if stored_proc in ['No file found', 'Failed to connect to the repository.', 'Failed to fetch the content'] and 'chat_history' not in session:
+        return jsonify({'response_message': "No file found."})
+
+    # Condition 2: No deal ID & no file name found, but chat history exists
+    if deal_id is None and stored_proc in ['No file found', 'Failed to connect to the repository.', 'Failed to fetch the content']:
+        if 'chat_history' in session:
+            return handle_previous_chat_response(text_response)
+
+    # Condition 3: No deal ID, but file name is found, and chat history exists
+    if deal_id is None and stored_proc not in ['No file found', 'Failed to connect to the repository.', 'Failed to fetch the content']:
+        if 'chat_history' in session:
+            return handle_previous_chat_response(text_response)
+
+    # Condition 4: Deal ID is present, but no file name, with chat history
+    if stored_proc in ['No file found', 'Failed to connect to the repository.', 'Failed to fetch the content']:
+        return handle_previous_chat_response(text_response)
+
+    # Proceed if deal_id and stored_proc are present
+    api_url = 'http://127.0.0.1:8080/goat'
+    response = requests.get(api_url, params={'deal_id': deal_id})
     
-    if stored_proc in ['No file found', 'Failed to connect to the repository.', 'Failed to fetch the content'] or ('chat_history' not in session):
-        return jsonify({'response_message': stored_proc})
+    if response.status_code == 200:
+        query = response.json()
     else:
-        # If deal_id is not found, provide a default response based on the chat history
-        deal_id = llm.predict(deal_prompt)
-        print(deal_id)
+        query = {'data': f'Failed to fetch requests: {response.status_code}'}
+    
+    print(query['data'])
 
-        try:
-            deal_id = int(deal_id)  # Convert deal_id to an integer
-        except ValueError:
-            deal_id = None  # If it's not an integer, set deal_id to None and continue
+    if 'chat_history' not in session:
+        session['chat_history'] = [{"role": "system", "content": "You are an expert in debugging stored procedures."}]
+    
+    session['chat_history'].append({"role": "user", "content": text_response})
 
-        if deal_id is None:
-            # Handle the case where no deal_id is provided; you can add logic here for fallback
-            # For example, you can use a default message or proceed without the deal_id
-            print("No deal_id provided, continuing conversation based on previous context.")
+    if 'chat_history' in session and len(session['chat_history']) > 2:
+        previous_user_message = session['chat_history'][-2]['content']
+        previous_llm_response = session['chat_history'][-1]['content']
+    else:
+        previous_user_message = "No prior response available."
+        previous_llm_response = "No prior response available."
 
-            # Initialize chat history if not present
-            if 'chat_history' not in session:
-                session['chat_history'] = [{"role": "system", "content": "You are an expert in debugging stored procedures."}]
-            
-            # Add the user's query to the session history
-            session['chat_history'].append({"role": "user", "content": text_response})
+    prompt = f"""
+    Stored Procedure:
+    {stored_proc}
 
-            # Retrieve the previous assistant response (if any)
-            previous_assistant_response = ""
-            if len(session['chat_history']) > 1:
-                previous_assistant_response = session['chat_history'][-3]['content']
-            
-            # Construct the prompt for the LLM, even if deal_id is not present
-            prompt = f"""
-            Stored Procedure:
-            {stored_proc}
+    User Request: {text_response}
 
-            User Request: {text_response}
+    Previous User Message: 
+    {previous_user_message}
 
-            Previous Assistant Response: {previous_assistant_response}
+    Previous Assistant Response: 
+    {previous_llm_response}
 
-            Debug the stored procedure based on the below results and give precise functional details by considering the comments in the code. Avoid technical details.
-            """
-            
-            # Use LangChain's LLMChain to process the prompt
-            completion = llm.predict(f"You are an expert in debugging stored procedures.\n{prompt}")
+    Debug the stored procedure based on the below results and give precise functional details by considering the comments in the code. Avoid technical details.
 
-            # Add the assistant's response to the session history
-            session['chat_history'].append({"role": "assistant", "content": completion.strip()})
+    {query['data']}
+    """
 
-            return jsonify({'response_message': completion.strip()})
-        
-        else:
-            api_url = 'http://127.0.0.1:8080/goat'
-            response = requests.get(api_url, params={'deal_id': deal_id})
-            
-            if response.status_code == 200:
-                query = response.json()
-            else:
-                query = {'data': f'Failed to fetch requests: {response.status_code}'}
-            
-            print(query['data'])
+    completion = llm.predict(f"You are an expert in debugging stored procedures.\n{prompt}")
+    session['chat_history'].append({"role": "assistant", "content": completion.strip()})
+    print(session)
+    return jsonify({'response_message': completion.strip()})
 
-            # Initialize chat history if not present
-            if 'chat_history' not in session:
-                session['chat_history'] = [{"role": "system", "content": "You are an expert in debugging stored procedures."}]
-            
-            # # Add the user's query to the session history
-            session['chat_history'].append({"role": "user", "content": text_response})
-            
-            # # Retrieve the previous assistant response (if any)
-            previous_assistant_response = ""
-            if len(session['chat_history']) > 1:  # If there are at least two messages in chat history
-                previous_assistant_response = session['chat_history'][-3]['content']  # The last assistant response
-            
-            # Construct the prompt for the LLM
-            prompt = f"""
-            Stored Procedure:
-            {stored_proc}
+def handle_previous_chat_response(text_response):
+    previous_assistant_response = ""  # Initialize an empty string for previous assistant's response
 
-            User Request: {text_response}
+    # Check if there is chat history and the length of chat history is greater than 2 (i.e., at least two messages)
+    if 'chat_history' in session and len(session['chat_history']) > 2:
+        # Retrieve the previous user message and the previous assistant's response from the chat history
+        previous_user_message = session['chat_history'][-2]['content']
+        previous_llm_response = session['chat_history'][-1]['content']
+    else:
+        # If chat history doesn't exist or is too short, assign default messages
+        previous_user_message = "No prior response available."
+        previous_llm_response = "No prior response available."
 
-            Previous Assistant Response: {previous_assistant_response}
+    # Debug: Print the previous assistant's response (initially empty)
+    print(f"handle_previous_chat_response'{previous_assistant_response}")
 
-            Debug the stored procedure based on the below results and give precise functional details by considering the comments in the code. Avoid technical details.
+    # Prepare the prompt with prior conversation context
+    prompt = f"""
+You are an expert in answering based on prior context.
 
-            {query['data']}
-            """
-            
-            # Use LangChain's LLMChain to process the prompt
-            completion = llm.predict(f"You are an expert in debugging stored procedures.\n{prompt}")
+Previous User Message: 
+{previous_user_message}
 
-            # Add the assistant's response to the session history
-            session['chat_history'].append({"role": "assistant", "content": completion.strip()})
-            
-            return jsonify({'response_message': completion.strip()})
+Previous Assistant Response: 
+{previous_llm_response}
 
+User Request: 
+{text_response}
+
+Please provide an updated response considering the above context.
+"""
+    # Pass the constructed prompt to the language model to generate a response
+    completion = llm.predict(f"You are an expert in answering questions from previous chat history.\n{prompt}")
+    
+    # Append the assistant's new response to the session's chat history
+    session['chat_history'].append({"role": "assistant", "content": completion.strip()})
+    
+    # Return the response message in JSON format
+    return jsonify({'response_message': completion.strip()})
 
 # /sql - Any sql generation will be handled by this end point
 @app.route('/sql', methods=['POST'])
@@ -467,15 +530,20 @@ def generate_response():
     session['chat_history'].append({"role": "user", "content": user_input})
     
     # Retrieve the previous SQL query from memory (if any)
-    previous_sql_query = ""
-    if len(session['chat_history']) > 1:
-        previous_sql_query = session['chat_history'][-2]['content']  # Last assistant response
+    if 'chat_history' in session and len(session['chat_history']) > 2:
+        previous_user_message = session['chat_history'][-2]['content']
+        previous_llm_response = session['chat_history'][-1]['content']
+    else:
+        previous_user_message = "No prior response available."
+        previous_llm_response = "No prior response available."
+
     print(session['chat_history'])
     # Use the SQL query chain to generate the SQL
     sql_query = sql_query_chain.run({
         "question": user_input,
         "schema_description": schema_description,
-        "previous_sql_query": previous_sql_query
+        "previous_user_message": previous_user_message,
+        "previous_llm_response": previous_llm_response
     })
 
     # Add the assistant's SQL query to the session history
